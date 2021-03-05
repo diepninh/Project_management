@@ -1,60 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import bunbu from '../image/bunbu.png';
+import * as image from '../image/image.js';
 import { useDispatch, useSelector } from 'react-redux';
 import * as actions from '../../actions/index.js';
+import * as actionsLogin from '../../actions/axiosLogin.js';
 import {
   BrowserRouter as Router,
   Link,
 
 } from 'react-router-dom';
-import axios from '../../axios.js';
 import './login.css';
-
-
 
 function Login() {
   const [displayAlert, setDisplayAlert] = useState('none');
   const email = useSelector(state => state.SignIn.email);
   const password = useSelector(state => state.SignIn.password);
-
   const dispatch = useDispatch();
+
   const clickToLogin = (event) => {
     event.preventDefault();
-
-    axios.post('/sign_in', {
-      email: email,
-      password: password
-    }).then(
-      res => {
-        document.cookie = 'access-token' + '=' + res.headers['access-token'];
-        document.cookie = 'client' + '=' + res.headers.client;
-        document.cookie = 'uid' + '=' + res.headers.uid;
-        document.cookie = 'email' + '=' + email;
-        const role = res.data.data.roles;
-        if (role.length > 1) {
-          dispatch(actions.changeStatusLogin('admin'))
-        }
-        else if (role.length === 1) {
-          if (role[0] === 'user') {
-            if (res.data.data['sign_in_count'] === 1) {
-              dispatch(actions.changeStatusLogin('userreset'))
-            } else {
-              dispatch(actions.changeStatusLogin('user'))
-            }
-          }
-        } else {
-          dispatch(actions.changeStatusLogin('hr'))
-        }
-      }
-    ).catch((err) => {
-      setDisplayAlert('');
-    })
-    dispatch(actions.changeEmail(''));
-    dispatch(actions.changePassword(''));
-
+    dispatch(actionsLogin.clickToLogin(email , password , setDisplayAlert))
   }
-
   return (
     <div className='container' style={{ width: '40%' }}>
       <div style={{ display: displayAlert }}>
@@ -66,7 +32,7 @@ function Login() {
         </div>
       </div>
       <div className='text-center'>
-        <img src={bunbu} width={150} height={150} className='mt-4' />
+        <img src={image.bunbu} width={150} height={150} className='mt-4' />
         <h1 className='textStyle'>Bunbu</h1>
       </div>
 
