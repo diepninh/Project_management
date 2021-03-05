@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import bunbu from '../image/bunbu.png';
+import * as image from '../image/image.js';
 import { useSelector,useDispatch } from 'react-redux';
 import * as actions from '../../actions/index.js';
-import axios from '../../axios.js';
+import * as actionsReset from '../../actions/axiosResetPass.js';
 import { useLocation } from 'react-router-dom';
 
 
@@ -16,26 +16,7 @@ function ResetPassword(props) {
   const headersUrl = queryString.parse(useLocation().search);
   const clickToSend = (event) => {
     event.preventDefault();
-
-    axios.put('/password',
-      {
-        password: password,
-        password_confirmation: passConf,
-      }, {
-      headers:
-      {
-        'access-token': headersUrl['access-token'],
-        uid: headersUrl.uid,
-        client: headersUrl.client,
-      }
-    }).then(
-      res => {
-        dispatch(actions.changeStatusLogin('login'))
-      }
-    ).catch((err) => {
-      setDisplayAlert('');
-    })
-
+    dispatch(actionsReset.clickToReset(password, passConf, headersUrl, setDisplayAlert))
   }
 
   return (
@@ -49,7 +30,7 @@ function ResetPassword(props) {
         </div>
       </div>
       <div className='text-center'>
-        <img src={bunbu} width={150} height={150} className='mt-4' />
+        <img src={image.bunbu} width={150} height={150} className='mt-4' />
         <h1 className='textStyle'>Bunbu</h1>
       </div>
       <div className='mt-5'>

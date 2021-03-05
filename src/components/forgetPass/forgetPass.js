@@ -1,10 +1,10 @@
 import React ,  { useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import bunbu from '../image/bunbu.png';
+import * as image from '../image/image.js';
 import './forgetPass.css';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../actions/index.js';
-import axios from '../../axios.js';
+import * as actionsReset from '../../actions/axiosResetPass.js';
 
 function ForgetPass(props) {
   const [displayAlert, setDisplayAlert] = useState('none');
@@ -13,16 +13,7 @@ function ForgetPass(props) {
 
   const clickToSend = (event) =>{
     event.preventDefault();
-    axios.post('/password',{
-      email : email,
-      redirect_url: 'http://localhost:8080/resetPass'
-    }).then(res =>{
-      dispatch(actions.changeStatusLogin('login'))
-    }).catch((err) =>{
-      setDisplayAlert('');
-    })
-
-    
+    dispatch(actionsReset.clickSendEmail(email,setDisplayAlert))
   }
   return (
     <div className='container'>
@@ -35,7 +26,7 @@ function ForgetPass(props) {
         </div>
       </div>
       <div className='text-center'>
-        <img src={bunbu} width={150} height={150} className='mt-4' />
+        <img src={image.bunbu} width={150} height={150} className='mt-4' />
         <h1 className='textStyle'>Bunbu</h1>
 
       </div>
