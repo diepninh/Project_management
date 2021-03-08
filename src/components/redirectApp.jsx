@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import Login from './login/login.js';
+import Login from './login/login';
  
 export function RedirectApp(props) {
   switch(props.statusLogin){
