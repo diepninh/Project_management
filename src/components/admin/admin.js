@@ -1,8 +1,6 @@
 import React from 'react';
 import { h1, Carousel, } from 'react-bootstrap';
-import slide1  from '../image/slide1.png';
-import slide0  from '../image/banner_2.png'; 
-import slide3  from '../image/banner_3.png';  
+import * as image from '../image/image.js';
 import './admin.css';
 import Header from './header.js'
 
@@ -14,21 +12,21 @@ function Admin() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={slide0}
+            src={image.slide0}
             alt="First slide"height={800}
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={slide1}
+            src={image.slide1}
             alt="Second slide" height={800}
           />
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={slide3}
+            src={image.slide3}
             alt="Third slide" height={800}
           />
         </Carousel.Item>
