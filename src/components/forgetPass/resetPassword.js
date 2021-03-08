@@ -1,34 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as image from '../image/image.js';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../actions/index.js';
 import * as actionsReset from '../../actions/axiosResetPass.js';
 import { useLocation } from 'react-router-dom';
-
+import AlertForm from '../alert/alert.js';
 
 function ResetPassword(props) {
-  const [displayAlert, setDisplayAlert] = useState('none');
   const password = useSelector(state => state.SignIn.passReset);
-  const passConf = useSelector( state => state.SignIn.passResetConfirm);
+  const passConf = useSelector(state => state.SignIn.passResetConfirm);
   const dispatch = useDispatch();
   const queryString = require('query-string');
   const headersUrl = queryString.parse(useLocation().search);
+
+  const [displayAlert, setDisplayAlert] = useState('none');
+
+  const getPassReset = (value) =>{
+    dispatch(actions.getPassReset(value))
+  }
+  const getPassResetConf = (value) =>{
+    dispatch(actions.getPassResetConf(value))
+  }
   const clickToSend = (event) => {
     event.preventDefault();
-    dispatch(actionsReset.clickToReset(password, passConf, headersUrl, setDisplayAlert))
+    if(password === passConf && password !== ''&& passConf !== ''){
+      dispatch(actionsReset.sendResetPassAPI(password,  headersUrl))
+    }else{
+      setDisplayAlert('');
+    }
+    
   }
 
   return (
     <div className='container' style={{ width: '40%' }}>
-      <div style={{ display: displayAlert }}>
-        <div className='alert alert-danger' role='alert'>
-          change pass is not successful!
-          <button type="button" className="close" onClick={() => setDisplayAlert('none')}>
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      </div>
+      <AlertForm  displayAlert={displayAlert} setDisplayAlert={setDisplayAlert} message={'change pass is not successful!'}/>
       <div className='text-center'>
         <img src={image.bunbu} width={150} height={150} className='mt-4' />
         <h1 className='textStyle'>Bunbu</h1>
@@ -38,12 +44,12 @@ function ResetPassword(props) {
           <div className='form-group'>
             <label></label>
             <input type='password' className='form-control form-control-lg' placeholder='Enter your password'
-              onChange={e => dispatch(actions.getPassReset(e.target.value))} />
+              onChange={e => getPassReset(e.target.value) } />
           </div>
           <div className='form-group'>
             <label></label>
-            <input type='password' className='form-control form-control-lg' placeholder='Confirm your password' 
-            onChange={e => dispatch(actions.getPassResetConf(e.target.value))}/>
+            <input type='password' className='form-control form-control-lg' placeholder='Confirm your password'
+              onChange={e => getPassResetConf(e.target.value)} />
           </div>
           <button type='submit' className='btn btn-primary mt-5 button btn-lg btn-block'>Send</button>
         </form>

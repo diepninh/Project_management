@@ -49,12 +49,14 @@ export const emailSend = (email) => {
     email: email,
   }
 };
+//thay đổi mật khẩu reset
 export const getPassReset = (password) => {
   return {
     type: types.GETPASSRESET,
     password: password,
   }
 };
+// thay đổi mật khẩu xác nhận lần nữa khi reset
 export const getPassResetConf = (password) => {
   return {
     type: types.GETPASSRESETCONF,

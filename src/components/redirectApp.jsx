@@ -3,30 +3,16 @@ import { Redirect } from 'react-router-dom';
 import Login from './login/login';
  
 export function RedirectApp(props) {
-   if(props.statusLogin === 'admin'){
-     return(
-       <Redirect to='/admin'/>
-     )
-   }
-   else if (props.statusLogin === 'userreset'){
-     return(
-       <Redirect to='/changepassaflog'/>
-     )
-   }
-   else if (props.statusLogin === 'user'){
-    return(
-      <Redirect to='/user'/>
-    )
+  switch(props.statusLogin){
+    case 'admin':
+      return <Redirect to='/admin'/>;
+    case 'userreset':
+      return <Redirect to='/changepassaflog'/>;
+    case 'user':
+      return <Redirect to='/user'/>;
+    case 'resetPass':
+      return <Redirect to='/resetPass'/>;
+    default:
+      return <Login/>;
   }
-   else if (props.statusLogin === 'resetPass'){
-     return(
-       <Redirect  to='/resetPass'/>
-     )
-   }
-   else{
-     return(
-       <Login/>
-     )
-   }
-
 }

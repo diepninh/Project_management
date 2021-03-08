@@ -3,16 +3,10 @@ import { Redirect } from 'react-router-dom';
 import ForgetPass from './forgetPass/forgetPass.js';
  
 export function RedirectAppFor(props) {
-   if(props.statusLogin === 'login'){
-     return(
-       <Redirect to='/'/>
-     )
-   }
-   
-   else{
-     return(
-       <ForgetPass/>
-     )
-   }
-
+  switch(props.statusLogin){
+    case 'login':
+      return <Redirect to='/'/>;
+    default:
+      return <ForgetPass/>;
+  }
 }

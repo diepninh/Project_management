@@ -1,7 +1,7 @@
 import axios from '../axios.js';
 import * as actions from './index.js';
 
-export const clickToLogin = (email, password, setDisplayAlert) => {
+export const sendLoginAPI = (email, password, setDisplayAlert) => {
   return (dispatch) => {
     return axios.post('/sign_in', {
       email: email,

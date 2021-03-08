@@ -10,27 +10,28 @@ import {
 
 } from 'react-router-dom';
 import './login.css';
+import AlertForm from '../alert/alert.js';
 
 function Login() {
-  const [displayAlert, setDisplayAlert] = useState('none');
+ 
   const email = useSelector(state => state.SignIn.email);
   const password = useSelector(state => state.SignIn.password);
+  const [displayAlert, setDisplayAlert] = useState('none');
   const dispatch = useDispatch();
 
+  const changeEmail = (value) =>{
+    dispatch(actions.changeEmail(value))
+  }
+  const changePassword = (value) =>{
+    dispatch(actions.changePassword(value))
+  }
   const clickToLogin = (event) => {
     event.preventDefault();
-    dispatch(actionsLogin.clickToLogin(email , password , setDisplayAlert))
+    dispatch(actionsLogin.sendLoginAPI(email , password , setDisplayAlert))
   }
   return (
     <div className='container' style={{ width: '40%' }}>
-      <div style={{ display: displayAlert }}>
-        <div className='alert alert-danger' role='alert'>
-          Your email or password is wrong.Please check it!.
-          <button type="button" className="close" onClick={() => setDisplayAlert('none')}>
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      </div>
+      <AlertForm  displayAlert={displayAlert} setDisplayAlert={setDisplayAlert} message={'Your email or password is wrong.Please check it!.'}/>
       <div className='text-center'>
         <img src={image.bunbu} width={150} height={150} className='mt-4' />
         <h1 className='textStyle'>Bunbu</h1>
@@ -42,7 +43,7 @@ function Login() {
           <div className='form-group'>
             <label></label>
             <input type='email' className='form-control form-control-lg' placeholder='Enter your email' value={email}
-              onChange={(e) => dispatch(actions.changeEmail(e.target.value))}
+              onChange={(e) => changeEmail(e.target.value)}
             />
             <div className='invalid-feedback'>
               email is not emty !
@@ -51,7 +52,7 @@ function Login() {
           <div className='form-group'>
             <label></label>
             <input type='password' className='form-control form-control-lg' placeholder='Enter your password' value={password}
-              onChange={(e) => dispatch(actions.changePassword(e.target.value))}
+              onChange={(e) => changePassword(e.target.value)}
             />
             <div className='invalid-feedback'>
               password is not emty !

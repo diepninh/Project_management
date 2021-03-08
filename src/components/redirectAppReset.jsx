@@ -3,17 +3,10 @@ import { Redirect } from 'react-router-dom';
 import ResetPassword  from './forgetPass/resetPassword.js';
  
 export function RedirectAppReset(props) {
-   if(props.statusLogin === 'login'){
-     return(
-       <Redirect to='/'/>
-     )
-   }
-   else{
-     return(
-       <ResetPassword/>
-     )
-   }
+  switch(props.statusLogin){
+    case 'login':
+      return  <Redirect to='/'/>;
+    default:
+      return <ResetPassword/>;
+  }
 }
-
-
- 

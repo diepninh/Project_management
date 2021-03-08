@@ -1,7 +1,7 @@
 import axios from '../axios.js';
 import * as actions from './index.js';
 
-export const clickSendEmail = (email, setDisplayAlert) => {
+export const sendEmailAPI = (email, setDisplayAlert) => {
   return (dispatch) => {
     return axios.post('/password', {
       email: email,
@@ -13,13 +13,13 @@ export const clickSendEmail = (email, setDisplayAlert) => {
     })
   }
 }
-
-export const clickToReset = (password, passConf, headersUrl, setDisplayAlert) => {
+// need fix API Post
+export const sendResetPassAPI = (password,  headersUrl) => {
   return (dispatch) => {
     return axios.put('/password',
       {
         password: password,
-        password_confirmation: passConf,
+        password_confirmation: password,
       }, {
       headers:
       {
@@ -32,7 +32,6 @@ export const clickToReset = (password, passConf, headersUrl, setDisplayAlert) =>
         dispatch(actions.changeStatusLogin('login'))
       }
     ).catch((err) => {
-      setDisplayAlert('');
     })
   }
 }
