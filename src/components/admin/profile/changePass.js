@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../../actions/index.js';
+import * as actionsChangePass from '../../../actions/axiosChangePass.js';                                                                                                                                                                                                                                                                        
 import { Container, Row, Button, Col, FormControl, Form, Alert } from 'react-bootstrap';
 
 function ChangePass(props) {
@@ -10,10 +11,20 @@ function ChangePass(props) {
   const passwordCurrent = useSelector(state => state.User.passwordCurrent);
   const passConfirm = useSelector(state => state.User.passConfirm);
   const dispatch = useDispatch();
+  
+  const checkPassCurrent = (value) => {
+    dispatch(actions.checkPassCurrent(value))
+  }
+  const changePassAfLog = (value) =>{
+    dispatch(actions.changePassAfLog(value))
+  }
+  const checkPassConfirm = (value) =>{
+    dispatch(actions.checkPassConfirm(value))
+  }
   const clickToSave = (event) => {
     event.preventDefault();
-    event.stopPropagation()
-    
+    event.stopPropagation();
+    dispatch(actionsChangePass.sendRequestChangePassAPI(passwordChange,passwordCurrent,passConfirm,setShowSuccess,setShowDanger))    
   }
 
 
@@ -44,7 +55,7 @@ function ChangePass(props) {
               </Col>
               <Col sm={8}>
                 <FormControl type='password' style={{ maxWidth: '100%' }}
-                 onChange={e => dispatch(actions.checkPassCurrent(e.target.value))} />
+                 onChange={e => checkPassCurrent(e.target.value)} />
               </Col>
             </Row>
             <Row style={{ marginTop: 30 }}>
@@ -53,7 +64,7 @@ function ChangePass(props) {
               </Col>
               <Col sm={8}>
                 <FormControl type='password' style={{ maxWidth: '100%' }}
-                onChange={e => dispatch(actions.changePassAfLog(e.target.value))} />
+                onChange={e => changePassAfLog(e.target.value)} />
               </Col>
             </Row>
             <Row style={{ marginTop: 30 }}>
@@ -62,7 +73,7 @@ function ChangePass(props) {
               </Col>
               <Col sm={8}>
                 <FormControl type='password' style={{ maxWidth: '100%' }} 
-                onChange={e => dispatch(actions.checkPassConfirm(e.target.value))} />
+                onChange={e => checkPassConfirm(e.target.value)} />
               </Col>
             </Row>
             <Row style={{ marginTop: 30 }}>
