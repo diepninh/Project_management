@@ -1,0 +1,19 @@
+.textStyle{
+  font-size: 50px;
+  color: #2a448c;
+}
+.form-control{
+  margin: auto;
+  max-width: 50%;
+} 
+.text-center{
+  margin-top: 10%;
+}
+.button{
+  background-color: #4B8CED;
+  max-width: 30%;
+  margin: auto;
+}
+.text{
+  text-align: center;
+}

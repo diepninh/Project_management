@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import ProfileAdmin from '../components/admin/profile/profileAdmin.js'
 import Login from './login/login';
  
 export function RedirectApp(props) {
