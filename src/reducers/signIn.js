@@ -4,7 +4,7 @@ import * as types from '../constaints/actionTypes.js';
 const initalState = {
   email : '',
   password : '',
-  statusLogin : '',
+  statusLogin : 'admin',
   emailSend : ' ',
   passReset : ' ',
   passResetConfirm : '',

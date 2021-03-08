@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import Login from './login/login';
+// import Login from './login/login';
  
 export function RedirectApp(props) {
   switch(props.statusLogin){
@@ -13,6 +13,6 @@ export function RedirectApp(props) {
     case 'resetPass':
       return <Redirect to='/resetPass'/>;
     default:
-      return <Login/>;
+      return <div></div>;
   }
 }
