@@ -14,16 +14,16 @@ import AlertForm from '../alert/alert.js';
 
 function Login() {
  
-  const email = useSelector(state => state.SignIn.email);
-  const password = useSelector(state => state.SignIn.password);
+  const [email , setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [displayAlert, setDisplayAlert] = useState('none');
   const dispatch = useDispatch();
 
   const changeEmail = (value) =>{
-    dispatch(actions.changeEmail(value))
+    setEmail(value);
   }
   const changePassword = (value) =>{
-    dispatch(actions.changePassword(value))
+    setPassword(value);
   }
   const clickToLogin = (event) => {
     event.preventDefault();

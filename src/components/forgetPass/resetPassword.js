@@ -2,25 +2,24 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as image from '../image/image.js';
 import { useSelector, useDispatch } from 'react-redux';
-import * as actions from '../../actions/index.js';
 import * as actionsReset from '../../actions/axiosResetPass.js';
 import { useLocation } from 'react-router-dom';
 import AlertForm from '../alert/alert.js';
 
 function ResetPassword(props) {
-  const password = useSelector(state => state.SignIn.passReset);
-  const passConf = useSelector(state => state.SignIn.passResetConfirm);
   const dispatch = useDispatch();
   const queryString = require('query-string');
   const headersUrl = queryString.parse(useLocation().search);
 
   const [displayAlert, setDisplayAlert] = useState('none');
+  const [password,setPassword] = useState('');
+  const [passConf ,setPassConf] = useState('');
 
   const getPassReset = (value) =>{
-    dispatch(actions.getPassReset(value))
+    setPassword(value);
   }
   const getPassResetConf = (value) =>{
-    dispatch(actions.getPassResetConf(value))
+    setPassConf(value);
   }
   const clickToSend = (event) => {
     event.preventDefault();

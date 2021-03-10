@@ -9,11 +9,11 @@ import AlertForm from '../alert/alert.js';
 
 function ForgetPass(props) {
   const [displayAlert, setDisplayAlert] = useState('none');
-  const email = useSelector(state => state.SignIn.emailSend);
+  const [email , setEmail] = useState('');
   const dispatch = useDispatch();
 
-  const emailSend = (value) =>{
-    dispatch(actions.emailSend(value))
+  const sendEmail = (value) =>{
+    setEmail(value);
   }
   const clickToSendEmail = (event) =>{
     event.preventDefault();
@@ -34,7 +34,7 @@ function ForgetPass(props) {
           <div className='form-group'>
             <label></label>
             <input type='email' className='form-control form-control-lg' placeholder='Enter your email'
-            onChange = {e =>emailSend(e.target.value)}
+            onChange = {e => sendEmail(e.target.value)}
              />
             <div className='invalid-feedback'>
               email is not emty !
