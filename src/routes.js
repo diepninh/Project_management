@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-// import Admin from './components/admin/admin.js';
+import Admin from './components/admin/admin.js';
 // import ListStaffs from './components/admin/accounts/listStaffs.js';
 // import SkillUser from './components/user/skillUser/skillUser.js';
 // import ProjectUser from './components/user/projectUser/projectUser.js';
@@ -7,7 +7,7 @@ import React, { useReducer } from 'react';
 // import AddAnAccount from './components/admin/accounts/addAnAccount.js';
 // import Require from './components/admin/skills/require.js';
 // import SkillList from './components/admin/skills/skillList.js'
-// import Projects from './components/admin/projects/projects.js';
+import Projects from './components/admin/projects/projects.js';
 // import Hr from './components/hr/hr.js';
 // import AccountHr from './components/hr/accountHr.js';
 // import SkillListHr from './components/hr/skillHr/skillList.js';
