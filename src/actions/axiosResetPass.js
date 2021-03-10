@@ -21,6 +21,7 @@ export const sendResetPassAPI = (password,  headersUrl) => {
         password: password,
         password_confirmation: password,
       }, {
+      //headers của link để reset pass
       headers:
       {
         'access-token': headersUrl['access-token'],

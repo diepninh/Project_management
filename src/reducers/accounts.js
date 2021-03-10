@@ -19,7 +19,7 @@ const initalState = {
 };
 const myReducer = (state = initalState, action) =>{
   switch(action.type){
-    case types.CHANGEEMAIL:
+    case types.CHANGESTATUSLOGIN:
       
       return {...state}; 
     default:
