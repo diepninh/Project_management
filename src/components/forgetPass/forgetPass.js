@@ -2,20 +2,20 @@ import React ,  { useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as image from '../image/image.js';
 import './forgetPass.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as message from '../message.js';
 import * as actionsReset from '../../actions/axiosResetPass.js';
 import AlertForm from '../alert/alert.js';
 
-function ForgetPass(props) {
+function ForgetPass() {
   const [displayAlert, setDisplayAlert] = useState('none');
   const [email , setEmail] = useState('');
   const dispatch = useDispatch();
 
   const clickToSendEmail = (event) =>{
     event.preventDefault();
-    dispatch(actionsReset.sendEmailAPI(email,setDisplayAlert))
-  }
+    dispatch(actionsReset.sendEmailAPI(email,setDisplayAlert));
+  };
   return (
     <div className='container'>
       <AlertForm  displayAlert={displayAlert} setDisplayAlert={setDisplayAlert} message={message.messageForgetPass}/>
@@ -31,11 +31,11 @@ function ForgetPass(props) {
           <div className='form-group'>
             <label></label>
             <input type='email' className='form-control form-control-lg' placeholder={message.placeholderEmail}
-            onChange = {e => setEmail(e.target.value)}
-             />
+              onChange = {e => setEmail(e.target.value)}
+            />
             <div className='invalid-feedback'>
               email is not emty !
-          </div>
+            </div>
           </div>
 
           <button type='submit' className='btn btn-primary mt-5 button btn-lg btn-block'>Give</button>

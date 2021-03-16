@@ -4,13 +4,13 @@ export const changeStatusLogin = (status) => {
   return {
     type: types.CHANGESTATUSLOGIN,
     status: status,
-  }
+  };
 };
 export const changeSearchProjectUser = (search) => {
   return {
     type: types.CHANGESEARCHPROJECTUSER,
     search: search,
-  }
+  };
 };
 
 

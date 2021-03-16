@@ -12,5 +12,5 @@ const myReducer = (state = initalState, action) =>{
     default:
       return state; 
   }
-}
+};
 export default myReducer;

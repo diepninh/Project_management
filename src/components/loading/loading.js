@@ -7,7 +7,6 @@ function Loading(){
       <CircularProgress/>
       <h3>Please wait a few seconds !</h3>
     </div>
-  )
+  );
 }
 export default Loading;
-

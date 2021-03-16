@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as image from '../image/image.js';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import * as message from '../message.js';
 import * as actionsLogin from '../../actions/axiosLogin.js';
 import {
-  BrowserRouter as Router,
-  Link,
+  BrowserRouter as Link,
 
 } from 'react-router-dom';
 import './login.css';
@@ -21,8 +20,8 @@ function Login() {
 
   const clickToLogin = (event) => {
     event.preventDefault();
-    dispatch(actionsLogin.sendLoginAPI(email , password , setDisplayAlert))
-  }
+    dispatch(actionsLogin.sendLoginAPI(email , password , setDisplayAlert));
+  };
   return (
     <div className='container' style={{ width: '40%' }}>
       <AlertForm  displayAlert={displayAlert} setDisplayAlert={setDisplayAlert} message={message.messageLogin}/>
@@ -46,7 +45,7 @@ function Login() {
           <div className='form-group'>
             <label></label>
             <input type='password' className='form-control form-control-lg' placeholder={message.placeholderPass} value={password}
-              onChange={(e) => setPassword(e.target.password)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <div className='invalid-feedback'>
               password is not emty !
@@ -58,10 +57,10 @@ function Login() {
           </div>
           <button type='submit' className='btn btn-primary mt-5 button btn-lg btn-block'>
             Login
-        </button>
+          </button>
           <div className='mt-5 '>
             <p className='text'>If you don't remember your password , Please click
-            <Link to='/forgetpass'> Forgot Password</Link></p>
+              <Link to='/forgetpass'> Forgot Password</Link></p>
           </div>
           <div style={{ height: 20 }}>
           </div>

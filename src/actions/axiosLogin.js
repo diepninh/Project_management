@@ -15,23 +15,23 @@ export const sendLoginAPI = (email, password, setDisplayAlert) => {
   
         const role = res.data.data.roles;
         if (role.length > 1) {
-          dispatch(actions.changeStatusLogin('admin'))
+          dispatch(actions.changeStatusLogin('admin'));
         }
         else if (role.length === 1) {
           if (role[0] === 'user') {
             if (res.data.data['sign_in_count'] === 1) {
-              dispatch(actions.changeStatusLogin('userreset'))
+              dispatch(actions.changeStatusLogin('userreset'));
             } else {
-              dispatch(actions.changeStatusLogin('user'))
+              dispatch(actions.changeStatusLogin('user'));
             }
           }
         } else {
-          dispatch(actions.changeStatusLogin('hr'))
+          dispatch(actions.changeStatusLogin('hr'));
         }
       }
-    ).catch((err) => {
+    ).catch(() => {
       setDisplayAlert('');
-    })
-  }
+    });
+  };
  
-}
+};

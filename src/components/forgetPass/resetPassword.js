@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as image from '../image/image.js';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as actionsReset from '../../actions/axiosResetPass.js';
 import { useLocation } from 'react-router-dom';
 import * as message from '../message.js';
 import AlertForm from '../alert/alert.js';
 
-function ResetPassword(props) {
+function ResetPassword() {
   const dispatch = useDispatch();
   const queryString = require('query-string');
   const headersUrl = queryString.parse(useLocation().search);
@@ -18,13 +18,12 @@ function ResetPassword(props) {
 
   const clickToSend = (event) => {
     event.preventDefault();
-    if(password === passConf && password !== ''&& passConf !== ''){
-      dispatch(actionsReset.sendResetPassAPI(password,  headersUrl))
+    if(password === passConf && password !== '' && passConf !== ''){
+      dispatch(actionsReset.sendResetPassAPI(password,  headersUrl));
     }else{
       setDisplayAlert('');
     }
-    
-  }
+  };
 
   return (
     <div className='container' style={{ width: '40%' }}>

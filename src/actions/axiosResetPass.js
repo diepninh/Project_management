@@ -6,13 +6,13 @@ export const sendEmailAPI = (email, setDisplayAlert) => {
     return axios.post('/password', {
       email: email,
       redirect_url: process.env.RESET_URL
-    }).then(res => {
-      dispatch(actions.changeStatusLogin('login'))
-    }).catch((err) => {
+    }).then(() => {
+      dispatch(actions.changeStatusLogin('login'));
+    }).catch(() => {
       setDisplayAlert('');
-    })
-  }
-}
+    });
+  };
+};
 // need fix API Post
 export const sendResetPassAPI = (password,  headersUrl) => {
   return (dispatch) => {
@@ -21,17 +21,17 @@ export const sendResetPassAPI = (password,  headersUrl) => {
         password: password
       }, {
       //headers của link để reset pass
-      headers:
+        headers:
       {
         'access-token': headersUrl['access-token'],
         uid: headersUrl.uid,
         client: headersUrl.client,
       }
-    }).then(
-      res => {
-        dispatch(actions.changeStatusLogin('login'))
+      }).then(
+      () => {
+        dispatch(actions.changeStatusLogin('login'));
       }
-    ).catch((err) => {
-    })
-  }
-}
+    ).catch(() => {
+    });
+  };
+};
