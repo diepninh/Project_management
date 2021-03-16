@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as image from '../image/image.js';
 import { useDispatch, useSelector } from 'react-redux';
-import * as actions from '../../actions/index.js';
+import * as message from '../message.js';
 import * as actionsLogin from '../../actions/axiosLogin.js';
 import {
   BrowserRouter as Router,
@@ -19,19 +19,13 @@ function Login() {
   const [displayAlert, setDisplayAlert] = useState('none');
   const dispatch = useDispatch();
 
-  const changeEmail = (value) =>{
-    setEmail(value);
-  }
-  const changePassword = (value) =>{
-    setPassword(value);
-  }
   const clickToLogin = (event) => {
     event.preventDefault();
     dispatch(actionsLogin.sendLoginAPI(email , password , setDisplayAlert))
   }
   return (
     <div className='container' style={{ width: '40%' }}>
-      <AlertForm  displayAlert={displayAlert} setDisplayAlert={setDisplayAlert} message={'Your email or password is wrong.Please check it!.'}/>
+      <AlertForm  displayAlert={displayAlert} setDisplayAlert={setDisplayAlert} message={message.messageLogin}/>
       <div className='text-center'>
         <img src={image.bunbu} width={150} height={150} className='mt-4' />
         <h1 className='textStyle'>Bunbu</h1>
@@ -42,8 +36,8 @@ function Login() {
         <form className='needs-validation' noValidate onSubmit={clickToLogin}>
           <div className='form-group'>
             <label></label>
-            <input type='email' className='form-control form-control-lg' placeholder='Enter your email' value={email}
-              onChange={(e) => changeEmail(e.target.value)}
+            <input type='email' className='form-control form-control-lg' placeholder={message.placeholderEmail} value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <div className='invalid-feedback'>
               email is not emty !
@@ -51,8 +45,8 @@ function Login() {
           </div>
           <div className='form-group'>
             <label></label>
-            <input type='password' className='form-control form-control-lg' placeholder='Enter your password' value={password}
-              onChange={(e) => changePassword(e.target.value)}
+            <input type='password' className='form-control form-control-lg' placeholder={message.placeholderPass} value={password}
+              onChange={(e) => setPassword(e.target.password)}
             />
             <div className='invalid-feedback'>
               password is not emty !

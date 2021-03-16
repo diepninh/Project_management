@@ -18,8 +18,7 @@ export const sendResetPassAPI = (password,  headersUrl) => {
   return (dispatch) => {
     return axios.put('/password',
       {
-        password: password,
-        password_confirmation: password,
+        password: password
       }, {
       //headers của link để reset pass
       headers:

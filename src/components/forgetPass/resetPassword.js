@@ -4,6 +4,7 @@ import * as image from '../image/image.js';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actionsReset from '../../actions/axiosResetPass.js';
 import { useLocation } from 'react-router-dom';
+import * as message from '../message.js';
 import AlertForm from '../alert/alert.js';
 
 function ResetPassword(props) {
@@ -15,12 +16,6 @@ function ResetPassword(props) {
   const [password,setPassword] = useState('');
   const [passConf ,setPassConf] = useState('');
 
-  const getPassReset = (value) =>{
-    setPassword(value);
-  }
-  const getPassResetConf = (value) =>{
-    setPassConf(value);
-  }
   const clickToSend = (event) => {
     event.preventDefault();
     if(password === passConf && password !== ''&& passConf !== ''){
@@ -33,7 +28,7 @@ function ResetPassword(props) {
 
   return (
     <div className='container' style={{ width: '40%' }}>
-      <AlertForm  displayAlert={displayAlert} setDisplayAlert={setDisplayAlert} message={'change pass is not successful!'}/>
+      <AlertForm  displayAlert={displayAlert} setDisplayAlert={setDisplayAlert} message={message.messageResetPass}/>
       <div className='text-center'>
         <img src={image.bunbu} width={150} height={150} className='mt-4' />
         <h1 className='textStyle'>Bunbu</h1>
@@ -42,13 +37,13 @@ function ResetPassword(props) {
         <form className='needs-validation' noValidate onSubmit={clickToSend}>
           <div className='form-group'>
             <label></label>
-            <input type='password' className='form-control form-control-lg' placeholder='Enter your password'
-              onChange={e => getPassReset(e.target.value) } />
+            <input type='password' className='form-control form-control-lg' placeholder={message.placeholderPass}
+              onChange={e => setPassword(e.target.value) } />
           </div>
           <div className='form-group'>
             <label></label>
-            <input type='password' className='form-control form-control-lg' placeholder='Confirm your password'
-              onChange={e => getPassResetConf(e.target.value)} />
+            <input type='password' className='form-control form-control-lg' placeholder={message.placeholderPass}
+              onChange={e => setPassConf(e.target.value)} />
           </div>
           <button type='submit' className='btn btn-primary mt-5 button btn-lg btn-block'>Send</button>
         </form>
