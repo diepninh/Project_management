@@ -12,5 +12,3 @@ export const changeSearchProjectUser = (search) => {
     search: search,
   };
 };
-
-

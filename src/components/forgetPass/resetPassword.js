@@ -7,11 +7,10 @@ import { useLocation } from 'react-router-dom';
 import * as message from '../message.js';
 import AlertForm from '../alert/alert.js';
 
+const queryString = require('query-string');
 function ResetPassword() {
   const dispatch = useDispatch();
-  const queryString = require('query-string');
   const headersUrl = queryString.parse(useLocation().search);
-
   const [displayAlert, setDisplayAlert] = useState('none');
   const [password,setPassword] = useState('');
   const [passConf ,setPassConf] = useState('');

@@ -33,5 +33,4 @@ export const sendLoginAPI = (email, password, setDisplayAlert) => {
       setDisplayAlert('');
     });
   };
- 
 };
