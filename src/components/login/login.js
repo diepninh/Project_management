@@ -1,33 +1,35 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as image from '../image/image.js';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as message from '../message.js';
 import * as actionsLogin from '../../actions/axiosLogin.js';
 import {
-  BrowserRouter as Router ,Link,
+  BrowserRouter as Router, Link,
 
 } from 'react-router-dom';
 import './login.css';
 import AlertForm from '../alert/alert.js';
+import { useTranslation } from 'react-i18next';
 
 function Login() {
- 
-  const [email , setEmail] = useState('');
+
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayAlert, setDisplayAlert] = useState('none');
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
 
   const clickToLogin = (event) => {
     event.preventDefault();
-    dispatch(actionsLogin.sendLoginAPI(email , password , setDisplayAlert));
+    dispatch(actionsLogin.sendLoginAPI(email, password, setDisplayAlert));
   };
   return (
     <div className='container' style={{ width: '40%' }}>
-      <AlertForm  displayAlert={displayAlert} setDisplayAlert={setDisplayAlert} message={message.messageLogin}/>
+      <AlertForm displayAlert={displayAlert} setDisplayAlert={setDisplayAlert} message={t(message.messageLogin)} />
       <div className='text-center'>
         <img src={image.bunbu} width={150} height={150} className='mt-4' />
-        <h1 className='textStyle'>Bunbu</h1>
+        <h1 className='textStyle'>{t('Bunbu')}</h1>
       </div>
 
 
@@ -39,28 +41,28 @@ function Login() {
               onChange={(e) => setEmail(e.target.value)}
             />
             <div className='invalid-feedback'>
-              email is not emty !
+              {t(message.validateEmail)}
             </div>
           </div>
           <div className='form-group'>
             <label></label>
-            <input type='password' className='form-control form-control-lg' placeholder={message.placeholderPass} value={password}
+            <input type='password' className='form-control form-control-lg' placeholder={t(message.placeholderPass)} value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <div className='invalid-feedback'>
-              password is not emty !
+              {t(message.validatePass)}
             </div>
           </div>
           <div className='form-check text-center'>
             <input type='checkbox' className='form-check-input' />
-            <label style={{ color: '#4B8CED' }}>Remember me</label>
+            <label style={{ color: '#4B8CED' }}>{t('Remember me')}</label>
           </div>
           <button type='submit' className='btn btn-primary mt-5 button btn-lg btn-block'>
             Login
           </button>
           <div className='mt-5 '>
-            <p className='text'>If you don't remember your password , Please click
-              <Link to='/forgetpass'> Forgot Password</Link></p>
+            <p className='text'>{t("If you don't remember your password , Please click")}
+              <Link to='/forgetpass'>{t(' Forgot Password')}</Link></p>
           </div>
           <div style={{ height: 20 }}>
           </div>

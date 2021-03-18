@@ -13,4 +13,3 @@ function GetCookie(cname) {
   return '';
 }
 export default GetCookie;
- 

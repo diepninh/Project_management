@@ -26,29 +26,28 @@ function ResetPassword() {
 
   return (
     <div className='container' style={{ width: '40%' }}>
-      <AlertForm  displayAlert={displayAlert} setDisplayAlert={setDisplayAlert} message={message.messageResetPass}/>
+      <AlertForm  displayAlert={displayAlert} setDisplayAlert={setDisplayAlert} message={t(message.messageResetPass)}/>
       <div className='text-center'>
         <img src={image.bunbu} width={150} height={150} className='mt-4' />
-        <h1 className='textStyle'>Bunbu</h1>
+        <h1 className='textStyle'>{t('Bunbu')}</h1>
       </div>
       <div className='mt-5'>
         <form className='needs-validation' noValidate onSubmit={clickToSend}>
           <div className='form-group'>
             <label></label>
-            <input type='password' className='form-control form-control-lg' placeholder={message.placeholderPass}
+            <input type='password' className='form-control form-control-lg' placeholder={t(message.placeholderPass)}
               onChange={e => setPassword(e.target.value) } />
           </div>
           <div className='form-group'>
             <label></label>
-            <input type='password' className='form-control form-control-lg' placeholder={message.placeholderPass}
+            <input type='password' className='form-control form-control-lg' placeholder={t(message.placeholderPass)}
               onChange={e => setPassConf(e.target.value)} />
           </div>
-          <button type='submit' className='btn btn-primary mt-5 button btn-lg btn-block'>Send</button>
+          <button type='submit' className='btn btn-primary mt-5 button btn-lg btn-block'>{t('Send')}</button>
         </form>
       </div>
     </div>
 
   );
 }
-
 export default ResetPassword;
