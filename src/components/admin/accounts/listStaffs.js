@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Container, Form, Button, Row, Col, Table, Dropdown } from 'react-bootstrap';
+import { Container, Form, Button, Row, Col, Table } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import Header from '../header';
 import Options from './options.js';
 import ModalAddAccount from './modallAddAccount.js';
 import { BsCaretUpFill, BsCaretDownFill } from 'react-icons/bs';
 
-function ListStaff(props) {
+function ListStaff() {
   const [displaySearchName, setDisplaySearchName] = useState('none');
   const [displaySearchEmail, setDisplaySearchEmail] = useState('none');
   const users = useSelector(state => state.Accounts.users);
@@ -84,7 +84,7 @@ function ListStaff(props) {
                     </td>
 
                   </tr>
-                )
+                );
               })
             }
           </tbody>
@@ -92,8 +92,6 @@ function ListStaff(props) {
 
       </Container>
     </div>
-  )
-};
-
-
+  );
+}
 export default ListStaff;

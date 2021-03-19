@@ -1,13 +1,11 @@
 import React from 'react';
-import { Button, Container,Row, Col, Image, Navbar,SplitButton} from 'react-bootstrap';
-import bunbu from '../image/bunbu.png';
-import * as actions from '../../actions/index.js';
+import { Container,Row, Col, Image, Navbar,SplitButton} from 'react-bootstrap';
+import * as image from '../image/image.js';
 import {
   BrowserRouter as Router,
   Link,
 } from 'react-router-dom';
 import './admin.css';
-import { connect } from 'react-redux';
 
 function Header(props) {
   return (
@@ -18,7 +16,7 @@ function Header(props) {
         <Navbar bg='light' expand="lg" fixed='top' style={{ paddingLeft: '20%' }}>
 
           <Navbar.Brand href="#home" style={{ fontSize: 35, color: '#2a448c' }}>
-            <Image src={bunbu} width={50} height={50} />Bunbu</Navbar.Brand>
+            <Image src={image.bunbu} width={50} height={50} />Bunbu</Navbar.Brand>
           <Col sm={4}></Col>
          
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -44,16 +42,5 @@ function Header(props) {
     </Container>
   );
 }
-const mapStateToProps = (state) => {
-  return {
-    statusLogin: state.SignIn.statusLogin,
-  }
-}
-const mapDispacthToProps = (dispatch, props) => {
-  return {
-    changeStatusLogin: (status) => {
-      dispatch(actions.changeStatusLogin(status))
-    },
-  }
-}
-export default connect(mapStateToProps,mapDispacthToProps)(Header);
+
+export default Header;

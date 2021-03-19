@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Container, Modal, Button, Form,Row,Col } from 'react-bootstrap';
+import { Container, Modal, Button} from 'react-bootstrap';
 import AddAnAccount from './addAnAccount';
 
 function ModalAddAccount() {
   const [showModal, setShowModal] = useState(false);
   const handleClose = () => {
     setShowModal(false);
-  }
+  };
   return (
     <Container className='ml-2' >
       <Button onClick={() => setShowModal(true)}>Add</Button>
@@ -22,11 +22,11 @@ function ModalAddAccount() {
         <Modal.Footer>
           <Button variant="primary" onClick={handleClose}>
             Add
-              </Button>
+          </Button>
         </Modal.Footer>
       </Modal>
     </Container>
 
-  )
+  );
 }
 export default ModalAddAccount;

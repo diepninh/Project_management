@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Row, Col, Modal } from 'react-bootstrap';
-import { BsTrashFill, BsFillPersonLinesFill } from 'react-icons/bs';
+import { BsTrashFill} from 'react-icons/bs';
 import { BiEdit } from 'react-icons/bi';
 import ModalDetail from './modalDetail.js';
 
@@ -19,7 +19,7 @@ function Options(props) {
   };
   const handleCloseEdit = () => {
     setShowModalEdit(false);
-  }
+  };
   return (
     <Container style={{ background: 'none' }}>
       <Row>
@@ -34,10 +34,10 @@ function Options(props) {
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Cancel
-          </Button>
+              </Button>
               <Button variant="primary" onClick={handleClose}>
                 Delete
-          </Button>
+              </Button>
             </Modal.Footer>
           </Modal>
         </Col>

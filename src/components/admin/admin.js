@@ -2,7 +2,7 @@ import React from 'react';
 import { h1, Carousel, } from 'react-bootstrap';
 import * as image from '../image/image.js';
 import './admin.css';
-import Header from './header.js'
+import Header from './header.js';
 
 function Admin() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Button, Row, Col, Container } from 'react-bootstrap';
+import { Form, Row, Col, Container } from 'react-bootstrap';
 
 function AddAnAccount() {
   return (
@@ -74,8 +74,8 @@ function AddAnAccount() {
               <Form.Group as={Row}  >
                 <Form.Label column sm='2' style={{ textAlign: 'center' }} >Sex:</Form.Label>
                 <Col sm='8'>
-                <Form.Check custom inline label="male" type='radio' />
-              <Form.Check custom inline label="female" type='radio' />
+                  <Form.Check custom inline label="male" type='radio' />
+                  <Form.Check custom inline label="female" type='radio' />
                 </Col>
                 <Form.Label column sm='2'></Form.Label>
               </Form.Group>
