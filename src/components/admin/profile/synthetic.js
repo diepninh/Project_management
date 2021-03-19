@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Container, Row, Button, Col } from 'react-bootstrap';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
  
 function Synthetic(props) {
   return (

@@ -8,10 +8,10 @@ import routes from '../routes.js';
 import { RedirectApp } from './redirectApp.jsx';
 import { RedirectAppFor } from './redirectAppFor.jsx';
 import { RedirectAppReset } from './redirectAppReset.jsx';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
 function App() {
-  const statusLogin = useSelector(state => state.SignIn.statusLogin)
+  const statusLogin = useSelector(state => state.SignIn.statusLogin);
   const showScreen = (routes) => {
     return <Switch>
       {
@@ -23,11 +23,11 @@ function App() {
               exact={route.exact}
               component={route.main}
             />
-          )
+          );
         })
       }
-    </Switch>
-  }
+    </Switch>;
+  };
   return (
     <Router>
       <Switch>

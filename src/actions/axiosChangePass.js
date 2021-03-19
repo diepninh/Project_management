@@ -1,5 +1,5 @@
 import axios from '../axios.js';
-import GetCookie from '../components/getCookie.js';
+import GetCookie from '../components/commons/getCookie.js';
 
 export const sendRequestChangePassAPI = (passwordChange,passConfirm,passwordCurrent,setShowSuccess,setShowDanger) =>{
   return (dispatch) =>{

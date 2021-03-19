@@ -67,4 +67,4 @@ function ProfileAdmin(props) {
   );
 }
 
-export default connect( )(ProfileAdmin);
+export default ProfileAdmin;
