@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 function ForgetPass() {
   const [displayAlert, setDisplayAlert] = useState('none');
   const [email , setEmail] = useState('');
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const clickToSendEmail = (event) =>{
@@ -28,7 +28,7 @@ function ForgetPass() {
       </div>
       <div className='mt-5'>
         <h1 className='textWarning' >{t('FORGOT YOUR PASSWORD !')}</h1>
-        <p>{t("Don't worry! Give us your email which is used to register your Bunbu account.We will mail you a verify to reset your password.")} </p>
+        <p>{t('Don\'t worry! Give us your email which is used to register your Bunbu account.We will mail you a verify to reset your password.')} </p>
         <form onSubmit={clickToSendEmail}>
           <div className='form-group'>
             <label></label>
