@@ -9,8 +9,6 @@ import './admin.css';
 
 function Header(props) {
   return (
-
-     
     <Container>
       <Row>
         <Navbar bg='light' expand="lg" fixed='top' style={{ paddingLeft: '20%' }}>
@@ -29,8 +27,8 @@ function Header(props) {
 
           </Navbar.Collapse>
           <SplitButton id='dropdown-split-varirants-Outline-primary' title="User">
-            <dl style={{ textAlign : 'center'}}>
-              <dt style={{ marginBottom : 10}}><Link to='/profileAdmin'>profile</Link></dt>
+            <dl className='btnHead'>
+              <dt className='optionDrop'><Link to='/profileAdmin'>profile</Link></dt>
               <dt><Link to='/' onClick={() => props.changeStatusLogin(false)}>log out</Link></dt>
             </dl>
           </SplitButton>

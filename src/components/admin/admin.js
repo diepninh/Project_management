@@ -32,7 +32,7 @@ function Admin() {
         </Carousel.Item>
       </Carousel>
       <div>
-        <h1 style={{ textAlign: 'center' , paddingTop: 20, color: 'blue'}}>Welcome to Bunbu!</h1>
+        <h1 className='text-welcom'>Welcome to Bunbu!</h1>
       </div>
     </div>
   );

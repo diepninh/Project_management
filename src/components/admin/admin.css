@@ -8,3 +8,19 @@
    color: white;
  }
  
+ .headerPad{
+   padding-top: 80px;
+   height: 130px;
+   background-color: '#7FA9EA';
+ }
+ .text-welcom{
+   text-align: center;
+   padding-top: 20px;
+   color: blue;
+ }
+ .btnHead{
+   text-align: center;
+ }
+ .optionDrop{
+   margin-bottom: 10px;
+ }

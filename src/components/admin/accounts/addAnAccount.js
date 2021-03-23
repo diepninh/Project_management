@@ -1,18 +1,19 @@
 import React from 'react';
 import { Form, Row, Col, Container } from 'react-bootstrap';
+import './accounts.css';
 
 function AddAnAccount() {
   return (
     <div>
-      <div style={{ marginTop: 20 }}></div>
-      <Container style={{ maxWidth: '100%' }}>
+      <div className='range'></div>
+      <Container className='containerModal'>
         <Form>
           <Form.Row>
             <Col sm='6'>
               <Form.Group as={Row}  >
-                <Form.Label column sm='2' style={{ textAlign: 'center' }} > Name:</Form.Label>
+                <Form.Label column sm='2' className='formStyleLabel' > Name:</Form.Label>
                 <Col sm='8'>
-                  <Form.Control type='text' placeholder='enter name' style={{ maxWidth: '100%' }} />
+                  <Form.Control type='text' placeholder='enter name' className='form-control-addform' />
                 </Col>
                 <Form.Label column sm='2'>
                 </Form.Label>
@@ -20,9 +21,9 @@ function AddAnAccount() {
             </Col>
             <Col sm='6'>
               <Form.Group as={Row}  >
-                <Form.Label column sm='4' style={{ textAlign: 'center' }} >Email:</Form.Label>
+                <Form.Label column sm='4' className='formStyleLabel' >Email:</Form.Label>
                 <Col sm='8'>
-                  <Form.Control type='text' placeholder='enter email' style={{ maxWidth: '100%' }} />
+                  <Form.Control type='text' placeholder='enter email' className='form-control-addform' />
                 </Col>
               </Form.Group>
             </Col>
@@ -30,9 +31,9 @@ function AddAnAccount() {
           <Form.Row>
             <Col sm='6'>
               <Form.Group as={Row}  >
-                <Form.Label column sm='2' style={{ textAlign: 'center' }} >Contract_Types:</Form.Label>
+                <Form.Label column sm='2' className='formStyleLabel' >Contract_Types:</Form.Label>
                 <Col sm='8'>
-                  <Form.Control as='select'>
+                  <Form.Control as='select' className='form-control-select'>
                     <option>Parttime</option>
                     <option>Offical</option>
                   </Form.Control>
@@ -42,9 +43,9 @@ function AddAnAccount() {
             </Col>
             <Col sm='6'>
               <Form.Group as={Row}  >
-                <Form.Label column sm='4' style={{ textAlign: 'center' }} >Date_Of_Birth:</Form.Label>
+                <Form.Label column sm='4' className='formStyleLabel' >Date_Of_Birth:</Form.Label>
                 <Col sm='8'>
-                  <Form.Control type='date'  style={{ maxWidth: '100%' }} />
+                  <Form.Control   type='date' className='form-control-addform' />
                 </Col>
               </Form.Group>
             </Col>
@@ -52,9 +53,9 @@ function AddAnAccount() {
           <Form.Row>
             <Col sm='6'>
               <Form.Group as={Row}  >
-                <Form.Label column sm='2' style={{ textAlign: 'center' }} > Phone:</Form.Label>
+                <Form.Label column sm='2' className='formStyleLabel' > Phone:</Form.Label>
                 <Col sm='8'>
-                  <Form.Control type='text' placeholder='enter phone' style={{ maxWidth: '100%' }} />
+                  <Form.Control className='form-control-addform' type='text' placeholder='enter phone'/>
                 </Col>
                 <Form.Label column sm='2'>
                 </Form.Label>
@@ -62,9 +63,9 @@ function AddAnAccount() {
             </Col>
             <Col sm='6'>
               <Form.Group as={Row}>
-                <Form.Label column sm='4' style={{ textAlign: 'center' }} >Address:</Form.Label>
+                <Form.Label column sm='4' className='formStyleLabel' >Address:</Form.Label>
                 <Col sm='8'>
-                  <Form.Control type='text' placeholder='enter address' style={{ maxWidth: '100%' }} />
+                  <Form.Control type='text' placeholder='enter address' className='form-control-addform' />
                 </Col>
               </Form.Group>
             </Col>
@@ -72,7 +73,7 @@ function AddAnAccount() {
           <Form.Row>
             <Col sm='6'>
               <Form.Group as={Row}  >
-                <Form.Label column sm='2' style={{ textAlign: 'center' }} >Sex:</Form.Label>
+                <Form.Label column sm='2' className='formStyleLabel' >Sex:</Form.Label>
                 <Col sm='8'>
                   <Form.Check custom inline label="male" type='radio' />
                   <Form.Check custom inline label="female" type='radio' />
@@ -82,9 +83,9 @@ function AddAnAccount() {
             </Col>
             <Col sm='6'>
               <Form.Group as={Row}>
-                <Form.Label column sm='4' style={{ textAlign: 'center' }} >DateJoin:</Form.Label>
+                <Form.Label column sm='4' className='formStyleLabel' >DateJoin:</Form.Label>
                 <Col sm='8'>
-                  <Form.Control type='date'  style={{ maxWidth: '100%' }} />
+                  <Form.Control type='date'  className='form-control-addform' />
                 </Col>
               </Form.Group>
             </Col>
@@ -92,7 +93,7 @@ function AddAnAccount() {
           <Form.Row>
             <Col sm='6'>
               <Form.Group as={Row}  >
-                <Form.Label column sm='2' style={{ textAlign: 'center' }} >Role:</Form.Label>
+                <Form.Label column sm='2' className='formStyleLabel' >Role:</Form.Label>
                 <Col sm='8'>
                   <Form.Control as='select'>
                     <option>admin</option>
@@ -105,9 +106,9 @@ function AddAnAccount() {
             </Col>
             <Col sm='6'>
               <Form.Group as={Row}>
-                <Form.Label column sm='4' style={{ textAlign: 'center' }} >StartContract:</Form.Label>
+                <Form.Label column sm='4' className='formStyleLabel' >StartContract:</Form.Label>
                 <Col sm='8'>
-                  <Form.Control type='date'  style={{ maxWidth: '100%' }} />
+                  <Form.Control type='date'  className='form-control-addform'/>
                 </Col>
               </Form.Group>
             </Col>

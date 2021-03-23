@@ -37,7 +37,7 @@ function Login() {
         <form className='needs-validation' noValidate onSubmit={clickToLogin}>
           <div className='form-group'>
             <label></label>
-            <input type='email' className='form-control form-control-lg' placeholder={message.placeholderEmail} value={email}
+            <input type='email' className='form-control form-control-lg form-control-login' placeholder={message.placeholderEmail} value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <div className='invalid-feedback'>

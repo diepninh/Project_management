@@ -3,6 +3,7 @@ import { Container, Form, Button, Row, Col, Modal } from 'react-bootstrap';
 import { BsTrashFill} from 'react-icons/bs';
 import { BiEdit } from 'react-icons/bi';
 import ModalDetail from './modalDetail.js';
+import './accounts.css';
 
 function Options(props) {
   const [showModal, setShowModal] = useState(false);
@@ -21,7 +22,7 @@ function Options(props) {
     setShowModalEdit(false);
   };
   return (
-    <Container style={{ background: 'none' }}>
+    <Container className='container-option'>
       <Row>
         {/* Xóa */}
         <Col sm={4}>
@@ -53,9 +54,9 @@ function Options(props) {
                 <Form.Row>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' style={{ textAlign: 'center' }} > Name:</Form.Label>
+                      <Form.Label column sm='2' className='formStyleLabel' > Name:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control type='text' defaultValue={props.user.name} style={{ maxWidth: '100%' }} />
+                        <Form.Control type='text' defaultValue={props.user.name} className='form-control-addform' />
                       </Col>
                       <Form.Label column sm='2'>
                       </Form.Label>
@@ -63,9 +64,9 @@ function Options(props) {
                   </Col>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='4' style={{ textAlign: 'center' }} >Email:</Form.Label>
+                      <Form.Label column sm='4' className='formStyleLabel' >Email:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control type='text' defaultValue={props.user.email} style={{ maxWidth: '100%' }} />
+                        <Form.Control type='text' defaultValue={props.user.email} className='form-control-addform' />
                       </Col>
                     </Form.Group>
                   </Col>
@@ -73,9 +74,9 @@ function Options(props) {
                 <Form.Row>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' style={{ textAlign: 'center' }} >Contract_Types:</Form.Label>
+                      <Form.Label column sm='2' className='formStyleLabel' >Contract_Types:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control as='select'>
+                        <Form.Control as='select' className='form-control-select'>
                           <option>Parttime</option>
                           <option>Offical</option>
                         </Form.Control>
@@ -85,9 +86,9 @@ function Options(props) {
                   </Col>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='4' style={{ textAlign: 'center' }} >Date_Of_Birth:</Form.Label>
+                      <Form.Label column sm='4' className='formStyleLabel' >Date_Of_Birth:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control type='date' style={{ maxWidth: '100%' }} />
+                        <Form.Control type='date' className='form-control-addform' />
                       </Col>
                     </Form.Group>
                   </Col>
@@ -95,9 +96,9 @@ function Options(props) {
                 <Form.Row>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' style={{ textAlign: 'center' }} > Phone:</Form.Label>
+                      <Form.Label column sm='2'  className='formStyleLabel' > Phone:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control type='text' placeholder='enter phone' style={{ maxWidth: '100%' }} />
+                        <Form.Control type='text' placeholder='enter phone' className='form-control-addform' />
                       </Col>
                       <Form.Label column sm='2'>
                       </Form.Label>
@@ -105,9 +106,9 @@ function Options(props) {
                   </Col>
                   <Col sm='6'>
                     <Form.Group as={Row}>
-                      <Form.Label column sm='4' style={{ textAlign: 'center' }} >Address:</Form.Label>
+                      <Form.Label column sm='4'  className='formStyleLabel' >Address:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control type='text' placeholder='enter address' style={{ maxWidth: '100%' }} />
+                        <Form.Control type='text' placeholder='enter address' className='form-control-addform' />
                       </Col>
                     </Form.Group>
                   </Col>
@@ -115,7 +116,7 @@ function Options(props) {
                 <Form.Row>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' style={{ textAlign: 'center' }} >Sex:</Form.Label>
+                      <Form.Label column sm='2' className='formStyleLabel' >Sex:</Form.Label>
                       <Col sm='8'>
                         <Form.Check custom inline label="male" type='radio' />
                         <Form.Check custom inline label="female" type='radio' />
@@ -125,9 +126,9 @@ function Options(props) {
                   </Col>
                   <Col sm='6'>
                     <Form.Group as={Row}>
-                      <Form.Label column sm='4' style={{ textAlign: 'center' }} >DateJoin:</Form.Label>
+                      <Form.Label column sm='4' className='formStyleLabel' >DateJoin:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control type='date' style={{ maxWidth: '100%' }} />
+                        <Form.Control type='date' className='form-control-addform' />
                       </Col>
                     </Form.Group>
                   </Col>
@@ -135,9 +136,9 @@ function Options(props) {
                 <Form.Row>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' style={{ textAlign: 'center' }} >Role:</Form.Label>
+                      <Form.Label column sm='2' className='formStyleLabel' >Role:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control as='select'>
+                        <Form.Control as='select' className='form-control-select'>
                           <option>admin</option>
                           <option>HR</option>
                           <option>staff</option>
@@ -148,9 +149,9 @@ function Options(props) {
                   </Col>
                   <Col sm='6'>
                     <Form.Group as={Row}>
-                      <Form.Label column sm='4' style={{ textAlign: 'center' }} >StartContract:</Form.Label>
+                      <Form.Label column sm='4' className='formStyleLabel' >StartContract:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control type='date' style={{ maxWidth: '100%' }} />
+                        <Form.Control type='date' className='form-control-addform'/>
                       </Col>
                     </Form.Group>
                   </Col>

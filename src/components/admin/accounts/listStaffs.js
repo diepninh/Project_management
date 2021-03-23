@@ -5,6 +5,7 @@ import Header from '../header';
 import Options from './options.js';
 import ModalAddAccount from './modallAddAccount.js';
 import { BsCaretUpFill, BsCaretDownFill } from 'react-icons/bs';
+import './accounts.css';
 
 function ListStaff() {
   const [displaySearchName, setDisplaySearchName] = useState('none');
@@ -14,17 +15,17 @@ function ListStaff() {
     <div>
       <div>
         <Header />
-        <div style={{ paddingTop: 80, background: '#7FA9EA', height: 130 }}>
+        <div className='rangeHead'>
         </div>
-        <div className='mt-2 mr-2' style={{ display: 'flex' }}>
-          <Button variant='warning' className='ml-2' style={{ color: 'white', height: 39 }}>Preview CSV</Button>
+        <div className='mt-2 mr-2 rangeSecond'>
+          <Button  className='ml-2 btnPre' variant='warning' >Preview CSV</Button>
           <ModalAddAccount />
           <Form style={{ display: displaySearchName }}>
             <Form.Row>
               <Form.Group as={Row}  >
-                <Form.Label column sm='2' style={{ color: '#7FA9EA' }} onClick={() => setDisplaySearchName('none')}> x</Form.Label>
+                <Form.Label column sm='2' className='btnDel' onClick={() => setDisplaySearchName('none')}> x</Form.Label>
                 <Col sm='8'>
-                  <Form.Control type='text' placeholder='enter name' style={{ maxWidth: '100%' }} />
+                  <Form.Control type='text' placeholder='enter name' className='form-control-addform'/>
                 </Col>
               </Form.Group>
             </Form.Row>
@@ -32,9 +33,9 @@ function ListStaff() {
           <Form style={{ display: displaySearchEmail }}>
             <Form.Row>
               <Form.Group as={Row}  >
-                <Form.Label column sm='2' style={{ color: '#7FA9EA' }} onClick={() => setDisplaySearchEmail('none')}> x</Form.Label>
+                <Form.Label column sm='2' className='btnDel' onClick={() => setDisplaySearchEmail('none')}> x</Form.Label>
                 <Col sm='8'>
-                  <Form.Control type='text' placeholder='enter email' style={{ maxWidth: '100%' }} />
+                  <Form.Control type='text' placeholder='enter email' className='form-control-addform' />
                 </Col>
               </Form.Group>
             </Form.Row>
@@ -42,7 +43,7 @@ function ListStaff() {
         </div>
       </div>
       <Container>
-        <Container style={{ textAlign: 'center' }}>
+        <Container className='container-staffs'>
           <h2>Staffs List</h2>
         </Container>
         <Table striped bordered hover>
@@ -94,4 +95,6 @@ function ListStaff() {
     </div>
   );
 }
+
+
 export default ListStaff;
