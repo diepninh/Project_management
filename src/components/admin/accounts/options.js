@@ -8,35 +8,23 @@ import './accounts.css';
 function Options(props) {
   const [showModal, setShowModal] = useState(false);
   const [showModalEdit, setShowModalEdit] = useState(false);
- 
-  const handleShowModalDel = () => {
-    setShowModal(true);
-  };
-  const handleClose = () => {
-    setShowModal(false);
-  };
-  const handleShowModalEdit = () => {
-    setShowModalEdit(true);
-  };
-  const handleCloseEdit = () => {
-    setShowModalEdit(false);
-  };
+
   return (
-    <Container className='container-option'>
+    <Container className='options'>
       <Row>
         {/* Xóa */}
         <Col sm={4}>
-          <BsTrashFill onClick={handleShowModalDel} />
-          <Modal show={showModal} onHide={handleClose}>
+          <BsTrashFill onClick={() => setShowModal(true)} />
+          <Modal show={showModal} onHide={() => setShowModal(false)}>
             <Modal.Header closeButton>
               <Modal.Title>Delete</Modal.Title>
             </Modal.Header>
             <Modal.Body>Bạn có chắc chắn muốn xóa {props.user.name} ra khỏi danh sách ?</Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
+              <Button variant="secondary" onClick={() => setShowModal(false)}>
                 Cancel
               </Button>
-              <Button variant="primary" onClick={handleClose}>
+              <Button variant="primary" onClick={() => setShowModal(false)}>
                 Delete
               </Button>
             </Modal.Footer>
@@ -44,7 +32,7 @@ function Options(props) {
         </Col>
         {/* Chỉnh sửa */}
         <Col sm={4}>
-          <BiEdit onClick={handleShowModalEdit} />
+          <BiEdit onClick={() => setShowModalEdit(true)} />
           <Modal show={showModalEdit} onHide={() => setShowModalEdit(false)} size='lg'>
             <Modal.Header closeButton>
               <Modal.Title>Edit</Modal.Title>
@@ -159,7 +147,7 @@ function Options(props) {
               </Form>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="primary" onClick={handleCloseEdit}>
+              <Button variant="primary" onClick={() => setShowModalEdit(false)}>
                 Edit
               </Button>
             </Modal.Footer>
@@ -173,5 +161,4 @@ function Options(props) {
     </Container>
   );
 }
-
 export default Options;

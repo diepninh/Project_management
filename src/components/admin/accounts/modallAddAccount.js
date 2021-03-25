@@ -26,7 +26,6 @@ function ModalAddAccount() {
         </Modal.Footer>
       </Modal>
     </Container>
-
   );
 }
 export default ModalAddAccount;

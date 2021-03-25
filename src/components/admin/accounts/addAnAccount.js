@@ -6,7 +6,7 @@ function AddAnAccount() {
   return (
     <div>
       <div className='range'></div>
-      <Container className='containerModal'>
+      <Container className='form-control-addform'>
         <Form>
           <Form.Row>
             <Col sm='6'>

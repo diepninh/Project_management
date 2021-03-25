@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Row, Col, Table } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import Header from '../header';
 import Options from './options.js';
 import ModalAddAccount from './modallAddAccount.js';
@@ -10,7 +10,8 @@ import './accounts.css';
 function ListStaff() {
   const [displaySearchName, setDisplaySearchName] = useState('none');
   const [displaySearchEmail, setDisplaySearchEmail] = useState('none');
-  const users = useSelector(state => state.Accounts.users);
+  const users = useSelector(state => state.Accounts.users, shallowEqual);
+
   return (
     <div>
       <div>
@@ -43,7 +44,7 @@ function ListStaff() {
         </div>
       </div>
       <Container>
-        <Container className='container-staffs'>
+        <Container className='formStyleLabel'>
           <h2>Staffs List</h2>
         </Container>
         <Table striped bordered hover>
@@ -90,11 +91,8 @@ function ListStaff() {
             }
           </tbody>
         </Table>
-
       </Container>
     </div>
   );
 }
-
-
 export default ListStaff;

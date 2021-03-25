@@ -9,9 +9,6 @@
   margin: auto;
   max-width: 50%;
 }
-.containerModal{
-  max-width: 100%;
-}
 .range{
   margin-top: 20px;
 }
@@ -30,9 +27,6 @@
 .btnDel {
   color: #7FA9EA;
 }
-.container-staffs{
-  text-align: center;
-}
-.container-option{
+.options{
   background-color: none;
 }
