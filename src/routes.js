@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import Admin from './components/admin/admin.js';
 // import ListStaffs from './components/admin/accounts/listStaffs.js';
 // import SkillUser from './components/user/skillUser/skillUser.js';
@@ -6,7 +6,7 @@ import Admin from './components/admin/admin.js';
 // import Profile from './components/user/profile/profile.js';
 // import AddAnAccount from './components/admin/accounts/addAnAccount.js';
 import Require from './components/admin/skills/require.js';
-import SkillList from './components/admin/skills/skillList.js'
+import SkillList from './components/admin/skills/skillList.js';
 // import Projects from './components/admin/projects/projects.js';
 // import Hr from './components/hr/hr.js';
 // import AccountHr from './components/hr/accountHr.js';
@@ -29,94 +29,14 @@ const routes = [
     main: () => <ListStaffs/>
   },
   {
-    path: '/skilluser',
-    exact: false,
-    main: () => <SkillUser/>
-  },
-  {
-    path: '/projectuser',
-    exact: false,
-    main: () => <ProjectUser/>
-  },
-  {
-    path: '/profile',
-    exact: false,
-    main: () =><Profile/>
-  },
-  {
-    path: '/listStaff',
-    exact: false,
-    main: () => <ListStaffs/>
-  },
-  {
-    path: '/addanaccount',
-    exact: false,
-    main: () => <AddAnAccount/>
-  },
-  {
     path: '/skills',
     exact: false,
     main: () => <SkillList/>
   },
   {
-    path: '/skillStaff',
-    exact: false,
-    main: () => <RequireHr/>
-  },
-  {
-    path: '/skillListHr',
-    exact: true,
-    main: () => <SkillListHr/>
-  },
-  {
-    path: '/skillList',
-    exact: false,
-    main: () => <SkillList/>
-  },
-  {
-    path: '/project',
-    exact: false,
-    main: () => <Projects/>
-  },
-  {
-    path: '/hr',
-    exact: false,
-    main: () => <Hr/>
-  },
-  {
-    path: '/accountHr',
-    exact: false,
-    main: () => <AccountHr/>
-  },
-  {
-    path: '/skillHr',
-    exact: false,
-    main: () => <SkillListHr/>
-  },
-  {
-    path: '/skillListHr',
-    exact: false,
-    main: () => <SkillListHr/>
-  },
-  {
-    path: '/user',
-    exact: false,
-    main: () => <User/>
-  },
-  {
-    path: '/profileAdmin',
-    exact: false,
-    main: () => <ProfileAdmin/>
-  },
-  {
     path: '/requirements',
     exact: false,
     main: () => <Require/>
-  },
-  {
-    path: '/profileHr',
-    exact: false,
-    main: () => <ProfileHR/>
   }
 ];
 export default routes;

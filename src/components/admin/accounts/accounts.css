@@ -1,0 +1,32 @@
+.formStyleLabel{
+  text-align: center;
+}
+.form-control-addform {
+  margin: auto;
+  max-width: 100%;
+}
+.form-control-select {
+  margin: auto;
+  max-width: 50%;
+}
+.range{
+  margin-top: 20px;
+}
+.rangeHead{
+  padding-top: 80px;
+  background-color: #7FA9EA;
+  height: 130px;
+}
+.rangeSecond{
+  display: flex;
+}
+.btnPre {
+  height: 39px;
+  color: white;
+}
+.btnDel {
+  color: #7FA9EA;
+}
+.options{
+  background-color: none;
+}

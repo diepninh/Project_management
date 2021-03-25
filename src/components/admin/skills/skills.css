@@ -1,0 +1,24 @@
+.skillsList{
+  text-align: center;
+}
+.rangeHead{
+  padding-top: 80px;
+  background-color: #7FA9EA;
+  height: 130px;
+}
+.tabBar{
+  background-color: #7FA9EA;
+  text-align: center;
+}
+.stylelinkBar{
+  color: white;
+}
+.stylelinkBar_Click{
+  color: blue;
+}
+.form_width{
+  max-width: 100%;
+}
+.number_of_member{
+  display: flex;
+}
