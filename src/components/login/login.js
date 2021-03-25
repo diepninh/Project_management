@@ -17,7 +17,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayAlert, setDisplayAlert] = useState('none');
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const clickToLogin = (event) => {
@@ -37,7 +37,7 @@ function Login() {
         <form className='needs-validation' noValidate onSubmit={clickToLogin}>
           <div className='form-group'>
             <label></label>
-            <input type='email' className='form-control form-control-lg' placeholder={message.placeholderEmail} value={email}
+            <input type='email' className='form-control form-control-lg form-control-login' placeholder={message.placeholderEmail} value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <div className='invalid-feedback'>
@@ -61,7 +61,7 @@ function Login() {
             Login
           </button>
           <div className='mt-5 '>
-            <p className='text'>{t("If you don't remember your password , Please click")}
+            <p className='text'>{t('If you don\'t remember your password , Please click')}
               <Link to='/forgetpass'>{t(' Forgot Password')}</Link></p>
           </div>
           <div style={{ height: 20 }}>

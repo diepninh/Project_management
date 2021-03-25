@@ -6,6 +6,7 @@ import * as actionsReset from '../../actions/axiosResetPass.js';
 import { useLocation } from 'react-router-dom';
 import * as message from '../message.js';
 import AlertForm from '../alert/alert.js';
+import { useTranslation } from 'react-i18next';
 
 const queryString = require('query-string');
 function ResetPassword() {
@@ -14,6 +15,7 @@ function ResetPassword() {
   const [displayAlert, setDisplayAlert] = useState('none');
   const [password,setPassword] = useState('');
   const [passConf ,setPassConf] = useState('');
+  const { t } = useTranslation();
 
   const clickToSend = (event) => {
     event.preventDefault();
