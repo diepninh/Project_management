@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Container, Modal, Button, Form, Col,Row} from 'react-bootstrap';
+import './skills.css';
 
 function ModalAddMember() {
   const [showModal, setShowModal] = useState(false);
-  const handleClose = () => {
-    setShowModal(false);
-  }
+ 
   return (
     <Container className='ml-2'>
       <Button onClick={() => setShowModal(true)}>Add</Button>
@@ -18,9 +17,9 @@ function ModalAddMember() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' style={{ textAlign: 'center' }} > Name:</Form.Label>
+                  <Form.Label column sm='2' className='skillsList' > Name:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='@name' style={{ maxWidth: '100%' }} />
+                    <Form.Control type='text' placeholder='@name' className='form_width' />
                   </Col>
                 </Form.Group>
               </Col>
@@ -38,13 +37,12 @@ function ModalAddMember() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={() => setShowModal(false)}>
             Add
-              </Button>
+          </Button>
         </Modal.Footer>
       </Modal>
     </Container>
-
-  )
+  );
 }
 export default ModalAddMember;

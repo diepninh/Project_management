@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Form, Button, Row, Col, Table, Modal } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { Container, Form, Button, Row, Col, Table } from 'react-bootstrap';
+import { useSelector , shallowEqual } from 'react-redux';
 import Header from '../header';
 import { Link } from 'react-router-dom';
 import Delete from './delete.js';
@@ -8,22 +8,23 @@ import ModalAddSkill from './modalAddSkill.js';
 import DetailMember from './detailMember.js';
 import Staticical from './staticical.js';
 import { BsCaretUpFill, BsCaretDownFill } from 'react-icons/bs';
+import './skills.css';
 
-function SkillList(props) {
-  const skillList = useSelector(state => state.User.skillList)
+function SkillList() {
+  const skillList = useSelector(state => state.User.skillList, shallowEqual);
   return (
     <div>
       <div>
         <Header />
-        <div style={{ paddingTop: 80, background: '#7FA9EA', height: 130 }}>
-          <Container style={{ background: '#7FA9EA', textAlign: 'center' }}>
+        <div className='rangeHead'>
+          <Container className='tabBar'>
             <Row>
-              <Col sm={6}><Link to='/skillList' className='stylelinkA' style={{ color: 'blue' }} >Skills list</Link></Col>
-              <Col sm={6}><Link to='/requirements' className='stylelinkA' >Requires</Link></Col>
+              <Col sm={6}><Link to='/skills' className='stylelinkBar_Click'>Skills list</Link></Col>
+              <Col sm={6}><Link to='/requirements' className='stylelinkBar'>Requires</Link></Col>
             </Row>
           </Container>
         </div>
-        <Container className='mt-2  ml-2 mr-2' style={{ maxWidth: '100%' }}>
+        <div className='  mt-2 ml-2 mr-2 '>
           <Row>
             <Col sm={1.5}>
               <Button variant='success'>Preview CSV</Button>
@@ -39,7 +40,7 @@ function SkillList(props) {
               <Form.Row>
                 <Form.Group as={Row}  >
                   <Col sm='10'>
-                    <Form.Control type='text' placeholder='enter skill' style={{ maxWidth: '100%' }} />
+                    <Form.Control type='text' placeholder='enter skill' className='form_width'/>
                   </Col>
                   <Col sm='2'>
                     <Button variant='primary'>Search</Button>
@@ -48,10 +49,10 @@ function SkillList(props) {
               </Form.Row>
             </Form>
           </Row>
-        </Container>
+        </div>
       </div>
       <Container>
-        <Container style={{ textAlign: 'center', }}>
+        <Container className='skillsList'>
           <h2>Skills list </h2>
         </Container>
 
@@ -87,25 +88,25 @@ function SkillList(props) {
                     <td>{index + 1}</td>
                     <td>{e}</td>
                     <td>
-                      <div style={{ display: 'flex' }}>
+                      <div className='number_of_member'>
                         2
                         <DetailMember member={e.member} />
                       </div>
                     </td>
                     <td>
-                      <div style={{ display: 'flex' }}>
+                      <div className='number_of_member'>
                         2
                         <DetailMember />
                       </div>
                     </td>
                     <td>
-                      <div style={{ display: 'flex' }}>
+                      <div className='number_of_member'>
                         2
                         <DetailMember />
                       </div>
                     </td>
                     <td>
-                      <div style={{ display: 'flex' }}>
+                      <div className='number_of_member'>
                         2
                         <DetailMember />
                       </div>
@@ -118,14 +119,13 @@ function SkillList(props) {
                     </td>
                     <td><Delete name={e} /></td>
                   </tr>
-                )
+                );
               })
             }
           </tbody>
         </Table>
       </Container>
     </div>
-  )
-};
-
+  );
+}
 export default SkillList;

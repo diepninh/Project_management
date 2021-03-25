@@ -7,14 +7,12 @@ import ModalAddMember from './modalAddMember.js';
 
 function DetailMember(props) {
   const [showModalMember, setShowModalMember] = useState(false);
-  const handleCloseMember = () => {
-    setShowModalMember(false);
-  }
+  
   return (
     <Container>
       <BsFillCaretRightFill color={'gray'} style={{ marginLeft: 30 }} onClick={() => setShowModalMember(true)} />
 
-      <Modal show={showModalMember} onHide={handleCloseMember} size='lg'>
+      <Modal show={showModalMember} onHide={() => setShowModalMember(false)} size='lg'>
         <Modal.Header closeButton>
           <Modal.Title>Member of skill level</Modal.Title>
         </Modal.Header>
@@ -64,11 +62,9 @@ function DetailMember(props) {
               </Col>
             </Row>
           </Container>
-
         </ModalFooter>
       </Modal>
     </Container>
-
-  )
+  );
 }
 export default DetailMember;

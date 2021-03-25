@@ -8,26 +8,26 @@ function ModalDetail(props) {
       <p onClick={() => setShowModalDetail(true)}>
         Ninh Hồng Diệp
       </p>
-          <Modal show={showModalDetail} onHide={() => setShowModalDetail(false)} size='lg'>
-            <Modal.Header closeButton>
-              <Modal.Title>Detail of</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <Container>
-                <p>Name :</p>
-                <p>Email :</p>
-                <p>ID:</p>
-                <p>Date of birth:</p>
-                <p>Date of join:</p>
-                <p>Date of contract:</p>
-                <p>Sex:</p>
-                <p>Phone:</p>
-                <p>Role:</p>
-                <p>Contract:</p>
-              </Container>
-            </Modal.Body>
-          </Modal>
+      <Modal show={showModalDetail} onHide={() => setShowModalDetail(false)} size='lg'>
+        <Modal.Header closeButton>
+          <Modal.Title>Detail of</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Container>
+            <p>Name :</p>
+            <p>Email :</p>
+            <p>ID:</p>
+            <p>Date of birth:</p>
+            <p>Date of join:</p>
+            <p>Date of contract:</p>
+            <p>Sex:</p>
+            <p>Phone:</p>
+            <p>Role:</p>
+            <p>Contract:</p>
+          </Container>
+        </Modal.Body>
+      </Modal>
     </Container>
-  )
+  );
 }
 export default ModalDetail;

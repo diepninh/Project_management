@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { Container, Modal, Button, Form, Col,Row} from 'react-bootstrap';
-import { HorizontalBar} from 'react-chartjs-2';
+import { Container, Modal, Button } from 'react-bootstrap';
+import { HorizontalBar } from 'react-chartjs-2';
 
 function Staticical() {
   const [showModal, setShowModal] = useState(false);
-  const handleClose = () => {
-    setShowModal(false);
-  }
+ 
   return (
     <Container className='ml-2'>
       <Button onClick={() => setShowModal(true)} variant='warning'>Staticical</Button>
@@ -16,37 +14,36 @@ function Staticical() {
         </Modal.Header>
         <Modal.Body>
           <Container>
-          <HorizontalBar
-        data={{
-          labels: [
-            "nodeJs" ,
-            "ruby",
-            "react",
-            "angular",
-          ],
-          datasets: [
-            {
-              label: "total of people",
-              backgroundColor: [
-                "#7FA9EA","#7FA9EA","#7FA9EA","#7FA9EA",
+            <HorizontalBar
+              data={{
+                labels: [
+                  'nodeJs' ,
+                  'ruby',
+                  'react',
+                  'angular',
+                ],
+                datasets: [
+                  {
+                    label: 'total of people',
+                    backgroundColor: [
+                      '#7FA9EA','#7FA9EA','#7FA9EA','#7FA9EA',
                 
-              ],
-              data: [11,20,9,8]
-            }
-          ]
-        }}
-        option={{
-          title: {
-            display: true,
-            text: "total of people"
-          }
-        }}
-      />
+                    ],
+                    data: [11,20,9,8]
+                  }
+                ]
+              }}
+              option={{
+                title: {
+                  display: true,
+                  text: 'total of people'
+                }
+              }}
+            />
           </Container>
         </Modal.Body>
       </Modal>
     </Container>
-
-  )
+  );
 }
 export default Staticical;

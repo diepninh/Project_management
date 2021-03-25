@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Container, Modal, Button, Form, Col,Row} from 'react-bootstrap';
+import './skills.css';
 
 function ModalAddSkill() {
   const [showModal, setShowModal] = useState(false);
-  const handleClose = () => {
-    setShowModal(false);
-  }
+
   return (
     <Container className='ml-2'>
       <Button onClick={() => setShowModal(true)}>Add</Button>
@@ -18,9 +17,9 @@ function ModalAddSkill() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' style={{ textAlign: 'center' }} > Name:</Form.Label>
+                  <Form.Label column sm='2' className='skillsList' > Name:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='enter name skill' style={{ maxWidth: '100%' }} />
+                    <Form.Control type='text' placeholder='enter name skill' className='form_width'/>
                   </Col>
                 </Form.Group>
               </Col>
@@ -28,9 +27,9 @@ function ModalAddSkill() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' style={{ textAlign: 'center' }} >Intern:</Form.Label>
+                  <Form.Label column sm='2' className='skillsList' >Intern:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='enter name staff' style={{ maxWidth: '100%' }} />
+                    <Form.Control type='text' placeholder='enter name staff' className='form_width' />
                   </Col>
                 </Form.Group>
               </Col>
@@ -38,9 +37,9 @@ function ModalAddSkill() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' style={{ textAlign: 'center' }} > Fresher:</Form.Label>
+                  <Form.Label column sm='2' className='skillsList' > Fresher:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='enter name staff' style={{ maxWidth: '100%' }} />
+                    <Form.Control type='text' placeholder='enter name staff' className='form_width' />
                   </Col>
                 </Form.Group>
               </Col>
@@ -48,9 +47,9 @@ function ModalAddSkill() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' style={{ textAlign: 'center' }} > Junior:</Form.Label>
+                  <Form.Label column sm='2' className='skillsList' > Junior:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='enter name staff' style={{ maxWidth: '100%' }} />
+                    <Form.Control type='text' placeholder='enter name staff' className='form_width' />
                   </Col>
                 </Form.Group>
               </Col>
@@ -58,9 +57,9 @@ function ModalAddSkill() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' style={{ textAlign: 'center' }} > Middle:</Form.Label>
+                  <Form.Label column sm='2' className='skillsList' > Middle:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='enter name staff' style={{ maxWidth: '100%' }} />
+                    <Form.Control type='text' placeholder='enter name staff' className='form_width' />
                   </Col>
                 </Form.Group>
               </Col>
@@ -68,9 +67,9 @@ function ModalAddSkill() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' style={{ textAlign: 'center' }} > Senior:</Form.Label>
+                  <Form.Label column sm='2' className='skillsList' > Senior:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='enter name staff' style={{ maxWidth: '100%' }} />
+                    <Form.Control type='text' placeholder='enter name staff' className='form_width'/>
                   </Col>
                 </Form.Group>
               </Col>
@@ -78,13 +77,12 @@ function ModalAddSkill() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={() => setShowModal(false)}>
             Add
-              </Button>
+          </Button>
         </Modal.Footer>
       </Modal>
     </Container>
-
-  )
+  );
 }
 export default ModalAddSkill;
