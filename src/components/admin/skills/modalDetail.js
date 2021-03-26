@@ -5,9 +5,7 @@ function ModalDetail(props) {
   const [showModalDetail, setShowModalDetail] = useState(false);
   return(
     <Container>
-      <p onClick={() => setShowModalDetail(true)}>
-        Ninh Hồng Diệp
-      </p>
+      <p onClick={() => setShowModalDetail(true)}></p>
       <Modal show={showModalDetail} onHide={() => setShowModalDetail(false)} size='lg'>
         <Modal.Header closeButton>
           <Modal.Title>Detail of</Modal.Title>

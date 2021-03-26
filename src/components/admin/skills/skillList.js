@@ -89,31 +89,26 @@ function SkillList() {
                     <td>{e}</td>
                     <td>
                       <div className='number_of_member'>
-                        2
                         <DetailMember member={e.member} />
                       </div>
                     </td>
                     <td>
                       <div className='number_of_member'>
-                        2
                         <DetailMember />
                       </div>
                     </td>
                     <td>
                       <div className='number_of_member'>
-                        2
                         <DetailMember />
                       </div>
                     </td>
                     <td>
                       <div className='number_of_member'>
-                        2
                         <DetailMember />
                       </div>
                     </td>
                     <td>
                       <div style={{ display: 'flex' }}>
-                        2
                         <DetailMember />
                       </div>
                     </td>
