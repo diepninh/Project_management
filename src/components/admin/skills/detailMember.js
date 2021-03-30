@@ -4,13 +4,14 @@ import { BsFillCaretRightFill } from 'react-icons/bs';
 import DeleteMember from './deleteMember.js';
 import ModalDetail from './modalDetail.js';
 import ModalAddMember from './modalAddMember.js';
+import './skills.css'
 
 function DetailMember(props) {
   const [showModalMember, setShowModalMember] = useState(false);
   
   return (
     <Container>
-      <BsFillCaretRightFill color={'gray'} style={{ marginLeft: 30 }} onClick={() => setShowModalMember(true)} />
+      <BsFillCaretRightFill color={'gray'} className='icon' onClick={() => setShowModalMember(true)} />
 
       <Modal show={showModalMember} onHide={() => setShowModalMember(false)} size='lg'>
         <Modal.Header closeButton>
@@ -22,7 +23,7 @@ function DetailMember(props) {
               <Form.Row>
                 <Form.Group as={Row}  >
                   <Col sm='10'>
-                    <Form.Control type='text' placeholder='enter skill' style={{ maxWidth: '100%' }} />
+                    <Form.Control type='text' placeholder='enter skill' className='form-width' />
                   </Col>
                   <Col sm='2'>
                     <Button variant='primary'>Search</Button>

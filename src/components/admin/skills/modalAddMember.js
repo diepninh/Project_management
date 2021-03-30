@@ -17,9 +17,9 @@ function ModalAddMember() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' className='skillsList' > Name:</Form.Label>
+                  <Form.Label column sm='2' className='skills-list' > Name:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='@name' className='form_width' />
+                    <Form.Control type='text' placeholder='@name' className='form-width' />
                   </Col>
                 </Form.Group>
               </Col>
@@ -27,9 +27,9 @@ function ModalAddMember() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' style={{ textAlign: 'center' }} >ID:</Form.Label>
+                  <Form.Label column sm='2' className='skills-list' >ID:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='B00...' style={{ maxWidth: '100%' }} />
+                    <Form.Control type='text' placeholder='B00...' className='form-width' />
                   </Col>
                 </Form.Group>
               </Col>

@@ -19,8 +19,8 @@ function SkillList() {
         <div className='rangeHead'>
           <Container className='tabBar'>
             <Row>
-              <Col sm={6}><Link to='/skills' className='stylelinkBar_Click'>Skills list</Link></Col>
-              <Col sm={6}><Link to='/requirements' className='stylelinkBar'>Requires</Link></Col>
+              <Col sm={6}><Link to='/skills' className='stylelink-bar-click'>Skills list</Link></Col>
+              <Col sm={6}><Link to='/requirements' className='stylelink-bar'>Requires</Link></Col>
             </Row>
           </Container>
         </div>
@@ -40,7 +40,7 @@ function SkillList() {
               <Form.Row>
                 <Form.Group as={Row}  >
                   <Col sm='10'>
-                    <Form.Control type='text' placeholder='enter skill' className='form_width'/>
+                    <Form.Control type='text' placeholder='enter skill' className='form-width'/>
                   </Col>
                   <Col sm='2'>
                     <Button variant='primary'>Search</Button>
@@ -52,7 +52,7 @@ function SkillList() {
         </div>
       </div>
       <Container>
-        <Container className='skillsList'>
+        <Container className='skills-list'>
           <h2>Skills list </h2>
         </Container>
 
@@ -88,27 +88,27 @@ function SkillList() {
                     <td>{index + 1}</td>
                     <td>{e}</td>
                     <td>
-                      <div className='number_of_member'>
+                      <div className='number-of-member'>
                         <DetailMember member={e.member} />
                       </div>
                     </td>
                     <td>
-                      <div className='number_of_member'>
+                      <div className='number-of-member'>
                         <DetailMember />
                       </div>
                     </td>
                     <td>
-                      <div className='number_of_member'>
+                      <div className='number-of-member'>
                         <DetailMember />
                       </div>
                     </td>
                     <td>
-                      <div className='number_of_member'>
+                      <div className='number-of-member'>
                         <DetailMember />
                       </div>
                     </td>
                     <td>
-                      <div style={{ display: 'flex' }}>
+                      <div className='number-of-member'>
                         <DetailMember />
                       </div>
                     </td>
