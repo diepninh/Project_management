@@ -1,11 +1,12 @@
 import React from 'react';
 import Admin from './components/admin/admin.js';
-import ListStaffs from './components/admin/accounts/listStaffs.js';
+// import ListStaffs from './components/admin/accounts/listStaffs.js';
 // import SkillUser from './components/user/skillUser/skillUser.js';
 // import ProjectUser from './components/user/projectUser/projectUser.js';
 // import Profile from './components/user/profile/profile.js';
-// import Require from './components/admin/skills/require.js';
-// import SkillList from './components/admin/skills/skillList.js'
+// import AddAnAccount from './components/admin/accounts/addAnAccount.js';
+import Require from './components/admin/skills/require.js';
+import SkillList from './components/admin/skills/skillList.js';
 // import Projects from './components/admin/projects/projects.js';
 // import Hr from './components/hr/hr.js';
 // import AccountHr from './components/hr/accountHr.js';
@@ -26,6 +27,16 @@ const routes = [
     path: '/accounts',
     exact: false,
     main: () => <ListStaffs/>
+  },
+  {
+    path: '/skills',
+    exact: false,
+    main: () => <SkillList/>
+  },
+  {
+    path: '/requirements',
+    exact: false,
+    main: () => <Require/>
   }
 ];
 export default routes;
