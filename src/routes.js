@@ -7,7 +7,7 @@ import Admin from './components/admin/admin.js';
 // import AddAnAccount from './components/admin/accounts/addAnAccount.js';
 import Require from './components/admin/skills/require.js';
 import SkillList from './components/admin/skills/skillList.js';
-// import Projects from './components/admin/projects/projects.js';
+import Projects from './components/admin/projects/projects.js';
 // import Hr from './components/hr/hr.js';
 // import AccountHr from './components/hr/accountHr.js';
 // import SkillListHr from './components/hr/skillHr/skillList.js';
@@ -37,6 +37,11 @@ const routes = [
     path: '/requirements',
     exact: false,
     main: () => <Require/>
+  },
+  {
+    path: '/project',
+    exact: false,
+    main: () => <Projects/>
   }
 ];
 export default routes;

@@ -16,15 +16,15 @@ function ListStaff() {
     <div>
       <div>
         <Header />
-        <div className='rangeHead'>
+        <div className='range-head'>
         </div>
-        <div className='mt-2 mr-2 rangeSecond'>
-          <Button  className='ml-2 btnPre' variant='warning' >Preview CSV</Button>
+        <div className='mt-2 mr-2 range-second'>
+          <Button  className='ml-2 btn-pre' variant='warning' >Preview CSV</Button>
           <ModalAddAccount />
           <Form style={{ display: displaySearchName }}>
             <Form.Row>
               <Form.Group as={Row}  >
-                <Form.Label column sm='2' className='btnDel' onClick={() => setDisplaySearchName('none')}> x</Form.Label>
+                <Form.Label column sm='2' className='btn-del' onClick={() => setDisplaySearchName('none')}> x</Form.Label>
                 <Col sm='8'>
                   <Form.Control type='text' placeholder='enter name' className='form-control-addform'/>
                 </Col>
@@ -34,7 +34,7 @@ function ListStaff() {
           <Form style={{ display: displaySearchEmail }}>
             <Form.Row>
               <Form.Group as={Row}  >
-                <Form.Label column sm='2' className='btnDel' onClick={() => setDisplaySearchEmail('none')}> x</Form.Label>
+                <Form.Label column sm='2' className='btn-del' onClick={() => setDisplaySearchEmail('none')}> x</Form.Label>
                 <Col sm='8'>
                   <Form.Control type='text' placeholder='enter email' className='form-control-addform' />
                 </Col>
@@ -44,7 +44,7 @@ function ListStaff() {
         </div>
       </div>
       <Container>
-        <Container className='formStyleLabel'>
+        <Container className='form-style-label'>
           <h2>Staffs List</h2>
         </Container>
         <Table striped bordered hover>

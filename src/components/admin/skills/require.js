@@ -13,8 +13,8 @@ function Require() {
         <div style={{ paddingTop: 80, background: '#7FA9EA', height: 130 }}>
           <Container style={{ background: '#7FA9EA', textAlign: 'center' }}>
             <Row>
-              <Col sm={6}><Link to='/skills' className='stylelinkBar' >Skills list</Link></Col>
-              <Col sm={6}><Link to='/requirements' className='stylelinkBar_Click' style={{color : 'blue'}} >Requires</Link></Col>
+              <Col sm={6}><Link to='/skills' className='stylelink-bar' >Skills list</Link></Col>
+              <Col sm={6}><Link to='/requirements' className='stylelink-bar-click' >Requires</Link></Col>
             </Row>
 
           </Container>

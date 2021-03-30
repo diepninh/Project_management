@@ -42,7 +42,7 @@ function Options(props) {
                 <Form.Row>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' className='formStyleLabel' > Name:</Form.Label>
+                      <Form.Label column sm='2' className='form-style-label' > Name:</Form.Label>
                       <Col sm='8'>
                         <Form.Control type='text' defaultValue={props.user.name} className='form-control-addform' />
                       </Col>
@@ -52,7 +52,7 @@ function Options(props) {
                   </Col>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='4' className='formStyleLabel' >Email:</Form.Label>
+                      <Form.Label column sm='4' className='form-style-label' >Email:</Form.Label>
                       <Col sm='8'>
                         <Form.Control type='text' defaultValue={props.user.email} className='form-control-addform' />
                       </Col>
@@ -62,7 +62,7 @@ function Options(props) {
                 <Form.Row>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' className='formStyleLabel' >Contract_Types:</Form.Label>
+                      <Form.Label column sm='2' className='form-style-label' >Contract_Types:</Form.Label>
                       <Col sm='8'>
                         <Form.Control as='select' className='form-control-select'>
                           <option>Parttime</option>
@@ -74,7 +74,7 @@ function Options(props) {
                   </Col>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='4' className='formStyleLabel' >Date_Of_Birth:</Form.Label>
+                      <Form.Label column sm='4' className='form-style-label' >Date_Of_Birth:</Form.Label>
                       <Col sm='8'>
                         <Form.Control type='date' className='form-control-addform' />
                       </Col>
@@ -84,7 +84,7 @@ function Options(props) {
                 <Form.Row>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2'  className='formStyleLabel' > Phone:</Form.Label>
+                      <Form.Label column sm='2'  className='form-style-label' > Phone:</Form.Label>
                       <Col sm='8'>
                         <Form.Control type='text' placeholder='enter phone' className='form-control-addform' />
                       </Col>
@@ -104,7 +104,7 @@ function Options(props) {
                 <Form.Row>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' className='formStyleLabel' >Sex:</Form.Label>
+                      <Form.Label column sm='2' className='form-style-label' >Sex:</Form.Label>
                       <Col sm='8'>
                         <Form.Check custom inline label="male" type='radio' />
                         <Form.Check custom inline label="female" type='radio' />
@@ -114,7 +114,7 @@ function Options(props) {
                   </Col>
                   <Col sm='6'>
                     <Form.Group as={Row}>
-                      <Form.Label column sm='4' className='formStyleLabel' >DateJoin:</Form.Label>
+                      <Form.Label column sm='4' className='form-style-label' >DateJoin:</Form.Label>
                       <Col sm='8'>
                         <Form.Control type='date' className='form-control-addform' />
                       </Col>
@@ -124,7 +124,7 @@ function Options(props) {
                 <Form.Row>
                   <Col sm='6'>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' className='formStyleLabel' >Role:</Form.Label>
+                      <Form.Label column sm='2' className='form-style-label' >Role:</Form.Label>
                       <Col sm='8'>
                         <Form.Control as='select' className='form-control-select'>
                           <option>admin</option>
@@ -137,7 +137,7 @@ function Options(props) {
                   </Col>
                   <Col sm='6'>
                     <Form.Group as={Row}>
-                      <Form.Label column sm='4' className='formStyleLabel' >StartContract:</Form.Label>
+                      <Form.Label column sm='4' className='form-style-label' >StartContract:</Form.Label>
                       <Col sm='8'>
                         <Form.Control type='date' className='form-control-addform'/>
                       </Col>

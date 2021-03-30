@@ -1,24 +1,27 @@
-.skillsList{
+.skills-list{
   text-align: center;
 }
-.rangeHead{
+.range-head{
   padding-top: 80px;
   background-color: #7FA9EA;
   height: 130px;
 }
-.tabBar{
+.tab-bar{
   background-color: #7FA9EA;
   text-align: center;
 }
-.stylelinkBar{
+.stylelink-bar{
   color: white;
 }
-.stylelinkBar_Click{
+.stylelink-bar-click{
   color: blue;
 }
-.form_width{
+.form-width{
   max-width: 100%;
 }
-.number_of_member{
+.number-of-member{
   display: flex;
+}
+.icon{
+  margin-left: 30px;
 }

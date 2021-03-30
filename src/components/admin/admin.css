@@ -1,10 +1,10 @@
- .styleLink{
+ .style-link{
    color: black;
    padding-right: 30px;
    font-size: 20px;
 
  }
- .headerPad{
+ .header-pad{
    padding-top: 80px;
    height: 130px;
    background-color: '#7FA9EA';
@@ -14,9 +14,9 @@
    padding-top: 20px;
    color: blue;
  }
- .btnHead{
+ .btn-head{
    text-align: center;
  }
- .optionDrop{
+ .option-drop{
    margin-bottom: 10px;
  }

@@ -17,9 +17,9 @@ function ModalAddSkill() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' className='skillsList' > Name:</Form.Label>
+                  <Form.Label column sm='2' className='skills-list' > Name:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='enter name skill' className='form_width'/>
+                    <Form.Control type='text' placeholder='enter name skill' className='form-width'/>
                   </Col>
                 </Form.Group>
               </Col>
@@ -27,7 +27,17 @@ function ModalAddSkill() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' className='skillsList' >Intern:</Form.Label>
+                  <Form.Label column sm='2' className='skills-list' >Intern:</Form.Label>
+                  <Col sm='8'>
+                    <Form.Control type='text' placeholder='enter name staff' className='form-width' />
+                  </Col>
+                </Form.Group>
+              </Col>
+            </Form.Row>
+            <Form.Row>
+              <Col>
+                <Form.Group as={Row}  >
+                  <Form.Label column sm='2' className='skills-list' > Fresher:</Form.Label>
                   <Col sm='8'>
                     <Form.Control type='text' placeholder='enter name staff' className='form_width' />
                   </Col>
@@ -37,9 +47,9 @@ function ModalAddSkill() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' className='skillsList' > Fresher:</Form.Label>
+                  <Form.Label column sm='2' className='skills-list' > Junior:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='enter name staff' className='form_width' />
+                    <Form.Control type='text' placeholder='enter name staff' className='form-width' />
                   </Col>
                 </Form.Group>
               </Col>
@@ -47,9 +57,9 @@ function ModalAddSkill() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' className='skillsList' > Junior:</Form.Label>
+                  <Form.Label column sm='2' className='skills-list' > Middle:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='enter name staff' className='form_width' />
+                    <Form.Control type='text' placeholder='enter name staff' className='form-width' />
                   </Col>
                 </Form.Group>
               </Col>
@@ -57,19 +67,9 @@ function ModalAddSkill() {
             <Form.Row>
               <Col>
                 <Form.Group as={Row}  >
-                  <Form.Label column sm='2' className='skillsList' > Middle:</Form.Label>
+                  <Form.Label column sm='2' className='skills-list' > Senior:</Form.Label>
                   <Col sm='8'>
-                    <Form.Control type='text' placeholder='enter name staff' className='form_width' />
-                  </Col>
-                </Form.Group>
-              </Col>
-            </Form.Row>
-            <Form.Row>
-              <Col>
-                <Form.Group as={Row}  >
-                  <Form.Label column sm='2' className='skillsList' > Senior:</Form.Label>
-                  <Col sm='8'>
-                    <Form.Control type='text' placeholder='enter name staff' className='form_width'/>
+                    <Form.Control type='text' placeholder='enter name staff' className='form-width'/>
                   </Col>
                 </Form.Group>
               </Col>

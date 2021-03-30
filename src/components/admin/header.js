@@ -17,13 +17,13 @@ function Header(props) {
           <Col sm={4}></Col>        
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Link to='/accounts' className='styleLink' style={{color : props.colorLinkAcc}}>Accounts</Link>
-            <Link to='/skills' className='styleLink' style={{color : props.colorLinkSkill}}>Skills</Link>
-            <Link to='/project' className='styleLink' style={{color : props.colorLinkProj}}>Projects</Link>
+            <Link to='/accounts' className='style-link' style={{color : props.colorLinkAcc}}>Accounts</Link>
+            <Link to='/skills' className='style-link' style={{color : props.colorLinkSkill}}>Skills</Link>
+            <Link to='/project' className='style-link' style={{color : props.colorLinkProj}}>Projects</Link>
           </Navbar.Collapse>
           <SplitButton id='dropdown-split-varirants-Outline-primary' title="User">
-            <dl className='btnHead'>
-              <dt className='optionDrop'><Link to='/profileAdmin'>profile</Link></dt>
+            <dl className='btn-head'>
+              <dt className='option-drop'><Link to='/profileAdmin'>profile</Link></dt>
               <dt><Link to='/' onClick={() => props.changeStatusLogin(false)}>log out</Link></dt>
             </dl>
           </SplitButton>
