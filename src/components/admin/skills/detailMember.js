@@ -4,17 +4,17 @@ import { BsFillCaretRightFill } from 'react-icons/bs';
 import DeleteMember from './deleteMember.js';
 import ModalDetail from './modalDetail.js';
 import ModalAddMember from './modalAddMember.js';
-import './projects.css';
 
 function DetailMember(props) {
   const [showModalMember, setShowModalMember] = useState(false);
+  
   return (
     <Container>
-      <BsFillCaretRightFill color={'gray'} className='icon' onClick={() => setShowModalMember(true)} />
+      <BsFillCaretRightFill color={'gray'} style={{ marginLeft: 30 }} onClick={() => setShowModalMember(true)} />
 
-      <Modal show={showModalMember} onHide={()=> setShowModalMember(false)} size='lg'>
+      <Modal show={showModalMember} onHide={() => setShowModalMember(false)} size='lg'>
         <Modal.Header closeButton>
-          <Modal.Title>Member of project</Modal.Title>
+          <Modal.Title>Member of skill level</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Container>
@@ -22,7 +22,7 @@ function DetailMember(props) {
               <Form.Row>
                 <Form.Group as={Row}  >
                   <Col sm='10'>
-                    <Form.Control type='text' placeholder='enter skill' className='form-control-addform' />
+                    <Form.Control type='text' placeholder='enter skill' style={{ maxWidth: '100%' }} />
                   </Col>
                   <Col sm='2'>
                     <Button variant='primary'>Search</Button>
@@ -35,7 +35,6 @@ function DetailMember(props) {
                 <tr>
                   <th>STT</th>
                   <th>Name</th>
-                  <th>Position</th>
                   <th></th>
                 </tr>
               </thead>
@@ -45,7 +44,6 @@ function DetailMember(props) {
                   <td>
                     <ModalDetail />
                   </td>
-                  <td></td>
                   <td><DeleteMember /></td>
                 </tr>
               </tbody>
@@ -64,10 +62,9 @@ function DetailMember(props) {
               </Col>
             </Row>
           </Container>
-
         </ModalFooter>
       </Modal>
     </Container>
-  )
+  );
 }
 export default DetailMember;

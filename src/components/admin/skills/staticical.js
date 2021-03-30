@@ -1,41 +1,42 @@
 import React, { useState } from 'react';
 import { Container, Modal, Button } from 'react-bootstrap';
-import { Doughnut } from 'react-chartjs-2';
+import { HorizontalBar } from 'react-chartjs-2';
 
 function Staticical() {
   const [showModal, setShowModal] = useState(false);
-  
+ 
   return (
     <Container className='ml-2'>
       <Button onClick={() => setShowModal(true)} variant='warning'>Staticical</Button>
       <Modal show={showModal} onHide={() => setShowModal(false)} size='lg'>
         <Modal.Header closeButton>
-          <Modal.Title id="example-custom-modal-styling-title">Staticical of project</Modal.Title>
+          <Modal.Title id="example-custom-modal-styling-title">Staticical of skill</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Container>
-            <Doughnut
+            <HorizontalBar
               data={{
                 labels: [
-                  "done",
-                  "unfinished"
+                  'nodeJs' ,
+                  'ruby',
+                  'react',
+                  'angular',
                 ],
                 datasets: [
                   {
-                    label: "project",
+                    label: 'total of people',
                     backgroundColor: [
-                      "#62A945",
-                      "#E7AE0C",
-
+                      '#7FA9EA','#7FA9EA','#7FA9EA','#7FA9EA',
+                
                     ],
-                    data: []
+                    data: [11,20,9,8]
                   }
                 ]
               }}
               option={{
                 title: {
                   display: true,
-                  text: "Project"
+                  text: 'total of people'
                 }
               }}
             />
@@ -43,7 +44,6 @@ function Staticical() {
         </Modal.Body>
       </Modal>
     </Container>
-
-  )
+  );
 }
 export default Staticical;

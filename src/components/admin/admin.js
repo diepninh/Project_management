@@ -2,7 +2,7 @@ import React from 'react';
 import { h1, Carousel, } from 'react-bootstrap';
 import * as image from '../image/image.js';
 import './admin.css';
-import Header from './header.js'
+import Header from './header.js';
 
 function Admin() {
   return (
@@ -32,10 +32,9 @@ function Admin() {
         </Carousel.Item>
       </Carousel>
       <div>
-        <h1 style={{ textAlign: 'center' , paddingTop: 20, color: 'blue'}}>Welcome to Bunbu!</h1>
+        <h1 className='text-welcom'>Welcome to Bunbu!</h1>
       </div>
     </div>
   );
-
 }
 export default Admin;

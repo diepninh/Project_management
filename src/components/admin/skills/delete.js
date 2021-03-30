@@ -2,8 +2,9 @@ import React, { useState} from 'react';
 import {Container ,Modal , Button} from 'react-bootstrap';
 import {BsTrashFill} from 'react-icons/bs';
 
-function DeleteMember(props) {
+function Delete(props) {
   const [showModal, setShowModal] = useState(false);
+  
   return (
     <Container>
       <BsTrashFill onClick={() => setShowModal(true)} />
@@ -22,6 +23,6 @@ function DeleteMember(props) {
         </Modal.Footer>
       </Modal>
     </Container>
-  )
+  );
 }
-export default DeleteMember;
+export default Delete;

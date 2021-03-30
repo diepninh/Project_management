@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Row, Col, Table, Modal } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useSelector , shallowEqual } from 'react-redux';
 import Options from './options.js';
 import Header from '../header';
 import DetailMember from './detailMember.js';
 import Staticical from './staticical.js';
 import ModalDetailProject from './modalDetailProject.js';
 import { BsCaretUpFill, BsCaretDownFill } from 'react-icons/bs';
+import './projects.css';
 
-function Projects(props) {
-  const ProjectList = useSelector(state => state.Accounts.ProjectList);
+function Projects() {
+  const ProjectList = useSelector(state => state.Accounts.ProjectList, shallowEqual);
   const [showModalAdd, setShowModalAdd] = useState(false);
 
-  const handleCloseAdd = () => {
-    setShowModalAdd(false);
-  }
   return (
     <div>
       <div>
         <Header />
-        <div style={{ paddingTop: 80, background: '#7FA9EA', height: 130 }}></div>
+        <div className='range-head'></div>
       </div>
-      <Container className='mt-2  ml-2 mr-2' style={{ maxWidth: '100%' }}>
+      <div className='mt-2 ml-2 mr-2 form-control-addform'>
         <Row>
           <Col sm={1.5}>
             <Button variant='success'>Preview CSV</Button>
@@ -37,7 +35,7 @@ function Projects(props) {
             <Form.Row>
               <Form.Group as={Row}  >
                 <Col sm='10'>
-                  <Form.Control type='text' placeholder='enter project' style={{ maxWidth: '100%' }} />
+                  <Form.Control type='text' placeholder='enter project' className='form-control-addform' />
                 </Col>
                 <Col sm='2'>
                   <Button variant='primary'>Search</Button>
@@ -46,9 +44,9 @@ function Projects(props) {
             </Form.Row>
           </Form>
         </Row>
-      </Container>
+      </div>
       <Container>
-        <Container style={{ textAlign: 'center' }}>
+        <Container className='form-style-label'>
           <h2>Projects List</h2>
         </Container>
         <Table striped bordered hover>
@@ -84,7 +82,7 @@ function Projects(props) {
                       <ModalDetailProject />
                     </td>
                     <td>
-                      <div style={{ display: 'flex' }}>
+                      <div className='range-second'>
                         {e.member.length}
                         <DetailMember />
                       </div>
@@ -103,19 +101,19 @@ function Projects(props) {
           </tbody>
         </Table>
         {/* modal add */}
-        <Modal show={showModalAdd} onHide={handleCloseAdd} size='lg'>
+        <Modal show={showModalAdd} onHide={() => setShowModalAdd(false)} size='lg'>
           <Modal.Header closeButton>
             <Modal.Title>Add a project</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Container style={{ maxWidth: '100%' }}>
+            <Container lassName='form-control-addform'>
               <Form>
                 <Form.Row>
                   <Col >
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' style={{ textAlign: 'center' }} > Name:</Form.Label>
+                      <Form.Label column sm='2' className='form-style-label' > Name:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control type='text' placeholder='Enter name of project' style={{ maxWidth: '100%' }} />
+                        <Form.Control type='text' placeholder='Enter name of project' className='form-control-addform'/>
                       </Col>
                       <Form.Label column sm='2'>
                       </Form.Label>
@@ -126,9 +124,9 @@ function Projects(props) {
                 <Form.Row>
                   <Col>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' style={{ textAlign: 'center' }} >Status:</Form.Label>
+                      <Form.Label column sm='2' className='form-style-label' >Status:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control as='select'>
+                        <Form.Control as='select' className='form-control-select'>
                           <option>done</option>
                           <option>unfinished</option>
                         </Form.Control>
@@ -140,9 +138,9 @@ function Projects(props) {
                 <Form.Row>
                   <Col>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' style={{ textAlign: 'center' }} > Member:</Form.Label>
+                      <Form.Label column sm='2' className='form-style-label' > Member:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control type='text' style={{ maxWidth: '100%' }} />
+                        <Form.Control type='text' className='form-control-addform' />
                       </Col>
                       <Form.Label column sm='2'>
                       </Form.Label>
@@ -152,9 +150,9 @@ function Projects(props) {
                 <Form.Row>
                   <Col>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' style={{ textAlign: 'center' }} > Start:</Form.Label>
+                      <Form.Label column sm='2' className='form-style-label' > Start:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control type='date' style={{ maxWidth: '100%' }} />
+                        <Form.Control type='date' className='form-control-addform' />
                       </Col>
                       <Form.Label column sm='2'>
                       </Form.Label>
@@ -164,9 +162,9 @@ function Projects(props) {
                 <Form.Row>
                   <Col>
                     <Form.Group as={Row}  >
-                      <Form.Label column sm='2' style={{ textAlign: 'center' }} >Deadline:</Form.Label>
+                      <Form.Label column sm='2' className='form-style-label' >Deadline:</Form.Label>
                       <Col sm='8'>
-                        <Form.Control type='date' style={{ maxWidth: '100%' }} />
+                        <Form.Control type='date' className='form-control-addform' />
                       </Col>
                     </Form.Group>
                   </Col>
@@ -175,7 +173,7 @@ function Projects(props) {
             </Container>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick={handleCloseAdd}>
+            <Button variant="primary" onClick={() => setShowModalAdd(false)}>
               Add
               </Button>
           </Modal.Footer>

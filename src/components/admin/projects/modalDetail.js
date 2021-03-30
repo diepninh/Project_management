@@ -6,7 +6,6 @@ function ModalDetail(props) {
   return(
     <Container>
       <p onClick={() => setShowModalDetail(true)}>
-        Ninh Hồng Diệp
       </p>
           <Modal show={showModalDetail} onHide={() => setShowModalDetail(false)} size='lg'>
             <Modal.Header closeButton>
